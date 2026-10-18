@@ -91,6 +91,23 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayMachBike
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MaySurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LucasFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DawnFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Johanna;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Barry;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidMPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WomanSnowPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldManPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ManSnowPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CashierMPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanFPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWomanPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CynthiaPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertPt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway;
@@ -496,6 +513,23 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MAY_ACRO_BIKE] =            &gObjectEventGraphicsInfo_MayAcroBike,
     [OBJ_EVENT_GFX_MAY_SURFING] =              &gObjectEventGraphicsInfo_MaySurfing,
     [OBJ_EVENT_GFX_MAY_FIELD_MOVE] =           &gObjectEventGraphicsInfo_MayFieldMove,
+    [OBJ_EVENT_GFX_LUCAS_NORMAL] =             &gObjectEventGraphicsInfo_LucasNormal,
+    [OBJ_EVENT_GFX_LUCAS_FIELD_MOVE] =         &gObjectEventGraphicsInfo_LucasFieldMove,
+    [OBJ_EVENT_GFX_DAWN_NORMAL] =             &gObjectEventGraphicsInfo_DawnNormal,
+    [OBJ_EVENT_GFX_DAWN_FIELD_MOVE] =         &gObjectEventGraphicsInfo_DawnFieldMove,
+    [OBJ_EVENT_GFX_JOHANNA] =                 &gObjectEventGraphicsInfo_Johanna,
+    [OBJ_EVENT_GFX_BARRY] =                   &gObjectEventGraphicsInfo_Barry,
+    [OBJ_EVENT_GFX_SCHOOL_KID_M_PT] =       &gObjectEventGraphicsInfo_SchoolKidMPt,
+    [OBJ_EVENT_GFX_YOUNGSTER_PT] =          &gObjectEventGraphicsInfo_YoungsterPt,
+    [OBJ_EVENT_GFX_WOMAN_SNOW_PT] =         &gObjectEventGraphicsInfo_WomanSnowPt,
+    [OBJ_EVENT_GFX_OLD_MAN_PT] =            &gObjectEventGraphicsInfo_OldManPt,
+    [OBJ_EVENT_GFX_LASS_PT] =               &gObjectEventGraphicsInfo_LassPt,
+    [OBJ_EVENT_GFX_MAN_SNOW_PT] =           &gObjectEventGraphicsInfo_ManSnowPt,
+    [OBJ_EVENT_GFX_CASHIER_M_PT] =          &gObjectEventGraphicsInfo_CashierMPt,
+    [OBJ_EVENT_GFX_POKEFAN_F_PT] =          &gObjectEventGraphicsInfo_PokefanFPt,
+    [OBJ_EVENT_GFX_OLD_WOMAN_PT] =          &gObjectEventGraphicsInfo_OldWomanPt,
+    [OBJ_EVENT_GFX_CYNTHIA_PT] =            &gObjectEventGraphicsInfo_CynthiaPt,
+    [OBJ_EVENT_GFX_EXPERT_PT] =             &gObjectEventGraphicsInfo_ExpertPt,
     [OBJ_EVENT_GFX_TRUCK] =                    &gObjectEventGraphicsInfo_Truck,
     [OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX] =    &gObjectEventGraphicsInfo_VigorothCarryingBox,
     [OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY] =     &gObjectEventGraphicsInfo_VigorothFacingAway,

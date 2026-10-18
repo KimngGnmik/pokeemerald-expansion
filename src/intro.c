@@ -1105,7 +1105,9 @@ static u8 SetUpCopyrightScreen(void)
     case COPYRIGHT_START_INTRO:
         if (UpdatePaletteFade())
             break;
-#if EXPANSION_INTRO == TRUE
+#if SKIP_OPENING_CUTSCENE == TRUE
+        SetMainCallback2(CB2_InitTitleScreen);
+#elif EXPANSION_INTRO == TRUE
         SetMainCallback2(CB2_ExpansionIntro);
         CreateTask(Task_HandleExpansionIntro, 0);
 #else

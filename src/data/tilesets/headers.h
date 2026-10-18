@@ -1552,3 +1552,69 @@ const struct Tileset gTileset_SnowTest =
     .metatileAttributes = gMetatileAttributes_SnowTest,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Snow =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Snow,
+    .palettes = gTilesetPalettes_Snow,
+    .metatiles = gMetatiles_Snow,
+    .metatileAttributes = gMetatileAttributes_Snow,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_SnowpointCity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SnowpointCity,
+    .palettes = gTilesetPalettes_SnowpointCity,
+    .metatiles = gMetatiles_SnowpointCity,
+    .metatileAttributes = gMetatileAttributes_SnowpointCity,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PlayersRoomBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PlayersRoomBase,
+    .palettes = gTilesetPalettes_PlayersRoomBase,
+    .metatiles = gMetatiles_PlayersRoomBase,
+    .metatileAttributes = gMetatileAttributes_PlayersRoomBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PlayersLivingBase =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PlayersLivingBase,
+    .palettes = gTilesetPalettes_PlayersLivingBase,
+    .metatiles = gMetatiles_PlayersLivingBase,
+    .metatileAttributes = gMetatileAttributes_PlayersLivingBase,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PlayersRoom =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PlayersRoom,
+    .palettes = gTilesetPalettes_PlayersRoom,
+    .metatiles = gMetatiles_PlayersRoom,
+    .metatileAttributes = gMetatileAttributes_PlayersRoom,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PlayersLiving =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PlayersLiving,
+    .palettes = gTilesetPalettes_PlayersLiving,
+    .metatiles = gMetatiles_PlayersLiving,
+    .metatileAttributes = gMetatileAttributes_PlayersLiving,
+    .callback = NULL,
+};

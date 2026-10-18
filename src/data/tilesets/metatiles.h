@@ -411,3 +411,21 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_SnowTest[] = INCBIN_U16("data/tilesets/secondary/snow_test/metatiles.bin");
 const u16 gMetatileAttributes_SnowTest[] = INCBIN_U16("data/tilesets/secondary/snow_test/metatile_attributes.bin");
+
+const u16 gMetatiles_Snow[] = INCBIN_U16("data/tilesets/primary/snow/metatiles.bin");
+const u16 gMetatileAttributes_Snow[] = INCBIN_U16("data/tilesets/primary/snow/metatile_attributes.bin");
+
+const u16 gMetatiles_SnowpointCity[] = INCBIN_U16("data/tilesets/secondary/snowpoint_city/metatiles.bin");
+const u16 gMetatileAttributes_SnowpointCity[] = INCBIN_U16("data/tilesets/secondary/snowpoint_city/metatile_attributes.bin");
+
+const u16 gMetatiles_PlayersRoomBase[] = INCBIN_U16("data/tilesets/primary/players_room_base/metatiles.bin");
+const u16 gMetatileAttributes_PlayersRoomBase[] = INCBIN_U16("data/tilesets/primary/players_room_base/metatile_attributes.bin");
+
+const u16 gMetatiles_PlayersLivingBase[] = INCBIN_U16("data/tilesets/primary/players_living_base/metatiles.bin");
+const u16 gMetatileAttributes_PlayersLivingBase[] = INCBIN_U16("data/tilesets/primary/players_living_base/metatile_attributes.bin");
+
+const u16 gMetatiles_PlayersRoom[] = INCBIN_U16("data/tilesets/secondary/players_room/metatiles.bin");
+const u16 gMetatileAttributes_PlayersRoom[] = INCBIN_U16("data/tilesets/secondary/players_room/metatile_attributes.bin");
+
+const u16 gMetatiles_PlayersLiving[] = INCBIN_U16("data/tilesets/secondary/players_living/metatiles.bin");
+const u16 gMetatileAttributes_PlayersLiving[] = INCBIN_U16("data/tilesets/secondary/players_living/metatile_attributes.bin");

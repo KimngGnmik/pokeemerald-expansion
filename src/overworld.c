@@ -1210,11 +1210,39 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
 static const u16 sNightMusicTable[END_MUS - START_MUS] =
 {
     // example usage: [MUS_SOOTOPOLIS - START_MUS] = MUS_LITTLEROOT,
+    // Diamond & Pearl towns and routes switch to their night versions
+    [MUS_DP_CANALAVE_DAY - START_MUS]        = MUS_DP_CANALAVE_NIGHT,
+    [MUS_DP_ETERNA_DAY - START_MUS]          = MUS_DP_ETERNA_NIGHT,
+    [MUS_DP_FIGHT_AREA_DAY - START_MUS]      = MUS_DP_FIGHT_AREA_NIGHT,
+    [MUS_DP_FLOAROMA_DAY - START_MUS]        = MUS_DP_FLOAROMA_NIGHT,
+    [MUS_DP_HEARTHOME_DAY - START_MUS]       = MUS_DP_HEARTHOME_NIGHT,
+    [MUS_DP_JUBILIFE_DAY - START_MUS]        = MUS_DP_JUBILIFE_NIGHT,
+    [MUS_DP_OREBURGH_DAY - START_MUS]        = MUS_DP_OREBURGH_NIGHT,
+    [MUS_DP_POKEMON_LEAGUE_DAY - START_MUS]  = MUS_DP_POKEMON_LEAGUE_NIGHT,
+    [MUS_DP_POKE_CENTER_DAY - START_MUS]     = MUS_DP_POKE_CENTER_NIGHT,
+    [MUS_DP_ROUTE201_DAY - START_MUS]        = MUS_DP_ROUTE201_NIGHT,
+    [MUS_DP_ROUTE203_DAY - START_MUS]        = MUS_DP_ROUTE203_NIGHT,
+    [MUS_DP_ROUTE205_DAY - START_MUS]        = MUS_DP_ROUTE205_NIGHT,
+    [MUS_DP_ROUTE206_DAY - START_MUS]        = MUS_DP_ROUTE206_NIGHT,
+    [MUS_DP_ROUTE209_DAY - START_MUS]        = MUS_DP_ROUTE209_NIGHT,
+    [MUS_DP_ROUTE210_DAY - START_MUS]        = MUS_DP_ROUTE210_NIGHT,
+    [MUS_DP_ROUTE216_DAY - START_MUS]        = MUS_DP_ROUTE216_NIGHT,
+    [MUS_DP_ROUTE225_DAY - START_MUS]        = MUS_DP_ROUTE225_NIGHT,
+    [MUS_DP_ROUTE228_DAY - START_MUS]        = MUS_DP_ROUTE228_NIGHT,
+    [MUS_DP_SANDGEM_DAY - START_MUS]         = MUS_DP_SANDGEM_NIGHT,
+    [MUS_DP_SNOWPOINT_DAY - START_MUS]       = MUS_DP_SNOWPOINT_NIGHT,
+    [MUS_DP_SOLACEON_DAY - START_MUS]        = MUS_DP_SOLACEON_NIGHT,
+    [MUS_DP_SUNYSHORE_DAY - START_MUS]       = MUS_DP_SUNYSHORE_NIGHT,
+    [MUS_DP_TWINLEAF_DAY - START_MUS]        = MUS_DP_TWINLEAF_NIGHT,
+    [MUS_DP_VALOR_LAKEFRONT_DAY - START_MUS] = MUS_DP_VALOR_LAKEFRONT_NIGHT,
+    [MUS_DP_VEILSTONE_DAY - START_MUS]       = MUS_DP_VEILSTONE_NIGHT,
 };
 
 static u16 GetNightMusicFromTrack(u16 track)
 {
     if (GetTimeOfDay() != TIME_NIGHT)
+        return track;
+    if (track < START_MUS || track >= END_MUS)
         return track;
     if (sNightMusicTable[track - START_MUS] >= START_MUS && sNightMusicTable[track - START_MUS] <= END_MUS)
         return sNightMusicTable[track - START_MUS];
@@ -1938,10 +1966,8 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    if (IS_FRLG)
-        gFieldCallback = FieldCB_WarpExitFadeFromBlack;
-    else
-        gFieldCallback = ExecuteTruckSequence;
+    // New games start in the player's bedroom with a plain fade-in (no Emerald moving-truck scene)
+    gFieldCallback = FieldCB_WarpExitFadeFromBlack;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();

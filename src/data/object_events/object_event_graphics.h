@@ -633,3 +633,37 @@ const u16 gObjectEventPic_PidgeyOld[] = INCGFX_U16("graphics/object_events/pics/
 const u16 gObjectEventPic_ClefairyOld[] = INCGFX_U16("graphics/object_events/pics/pokemon_old/clefairy.png", ".4bpp", "-mwidth 2 -mheight 2");
 
 #endif // IS_FRLG
+
+// Sinnoh player characters (32x32 frames, from sinnoh-remakes/pokeemerald-platinum)
+const u32 gObjectEventPic_LucasNormalRunning[] = INCGFX_U32("graphics/object_events/pics/people/lucas/walking_running.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_LucasFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/lucas/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Lucas[] = INCGFX_U16("graphics/object_events/palettes/lucas.pal", ".gbapal");
+const u32 gObjectEventPic_DawnNormalRunning[] = INCGFX_U32("graphics/object_events/pics/people/dawn/walking_running.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_DawnFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/dawn/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Dawn[] = INCGFX_U16("graphics/object_events/palettes/dawn.pal", ".gbapal");
+const u32 gObjectEventPic_Johanna[] = INCGFX_U32("graphics/object_events/pics/people/johanna.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Johanna[] = INCGFX_U16("graphics/object_events/palettes/johanna.pal", ".gbapal");
+const u32 gObjectEventPic_Barry[] = INCGFX_U32("graphics/object_events/pics/people/barry.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Barry[] = INCGFX_U16("graphics/object_events/palettes/barry.pal", ".gbapal");
+const u32 gObjectEventPic_SchoolKidMPt[] = INCGFX_U32("graphics/object_events/pics/people/school_kid_m_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_SchoolKidMPt[] = INCGFX_U16("graphics/object_events/palettes/school_kid_m_pt.pal", ".gbapal");
+const u32 gObjectEventPic_YoungsterPt[] = INCGFX_U32("graphics/object_events/pics/people/youngster_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_YoungsterPt[] = INCGFX_U16("graphics/object_events/palettes/youngster_pt.pal", ".gbapal");
+const u32 gObjectEventPic_WomanSnowPt[] = INCGFX_U32("graphics/object_events/pics/people/woman_snow_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_WomanSnowPt[] = INCGFX_U16("graphics/object_events/palettes/woman_snow_pt.pal", ".gbapal");
+const u32 gObjectEventPic_OldManPt[] = INCGFX_U32("graphics/object_events/pics/people/old_man_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_OldManPt[] = INCGFX_U16("graphics/object_events/palettes/old_man_pt.pal", ".gbapal");
+const u32 gObjectEventPic_LassPt[] = INCGFX_U32("graphics/object_events/pics/people/lass_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_LassPt[] = INCGFX_U16("graphics/object_events/palettes/lass_pt.pal", ".gbapal");
+const u32 gObjectEventPic_ManSnowPt[] = INCGFX_U32("graphics/object_events/pics/people/man_snow_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_ManSnowPt[] = INCGFX_U16("graphics/object_events/palettes/man_snow_pt.pal", ".gbapal");
+const u32 gObjectEventPic_CashierMPt[] = INCGFX_U32("graphics/object_events/pics/people/cashier_m_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_CashierMPt[] = INCGFX_U16("graphics/object_events/palettes/cashier_m_pt.pal", ".gbapal");
+const u32 gObjectEventPic_PokefanFPt[] = INCGFX_U32("graphics/object_events/pics/people/pokefan_f_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_PokefanFPt[] = INCGFX_U16("graphics/object_events/palettes/pokefan_f_pt.pal", ".gbapal");
+const u32 gObjectEventPic_OldWomanPt[] = INCGFX_U32("graphics/object_events/pics/people/old_woman_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_OldWomanPt[] = INCGFX_U16("graphics/object_events/palettes/old_woman_pt.pal", ".gbapal");
+const u32 gObjectEventPic_CynthiaPt[] = INCGFX_U32("graphics/object_events/pics/people/cynthia_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_CynthiaPt[] = INCGFX_U16("graphics/object_events/palettes/cynthia_pt.pal", ".gbapal");
+const u32 gObjectEventPic_ExpertPt[] = INCGFX_U32("graphics/object_events/pics/people/expert_pt.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_ExpertPt[] = INCGFX_U16("graphics/object_events/palettes/expert_pt.pal", ".gbapal");

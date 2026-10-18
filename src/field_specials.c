@@ -1552,6 +1552,12 @@ bool8 IsStarterInParty(void)
     return FALSE;
 }
 
+// TRUE if the player's last step was a run (B held with the Running Shoes).
+bool8 IsPlayerRunning(void)
+{
+    return (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_DASH) != 0;
+}
+
 bool8 ScriptCheckFreePokemonStorageSpace(void)
 {
     return CheckFreePokemonStorageSpace();

@@ -1,0 +1,652 @@
+{
+  "id": "MAP_SNOWPOINT_CITY",
+  "name": "SnowpointCity",
+  "layout": "LAYOUT_SNOWPOINT_CITY",
+  "music": "MUS_DP_SNOWPOINT_DAY",
+  "region_map_section": "MAPSEC_SNOWPOINT_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SNOW",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE217",
+      "offset": 32,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_SNOWPOINT_BARRY",
+      "graphics_id": "OBJ_EVENT_GFX_BARRY",
+      "x": 9,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_Barry",
+      "flag": "FLAG_HIDE_SNOWPOINT_CITY_BARRY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
+      "x": 9,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "LIGHT_TYPE_BALL",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
+      "x": 12,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "LIGHT_TYPE_BALL",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
+      "x": 22,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "LIGHT_TYPE_BALL",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
+      "x": 25,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "LIGHT_TYPE_BALL",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M_PT",
+      "x": 21,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_SnoruntKid",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNORUNT)",
+      "x": 22,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_Snorunt",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 20,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_ItemNeverMeltIce",
+      "flag": "FLAG_ITEM_SNOWPOINT_CITY_NEVER_MELT_ICE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_PT",
+      "x": 16,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_YoungTrainer",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_SNOW_PT",
+      "x": 6,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_TempleWoman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_ItemPokeBall",
+      "flag": "FLAG_ITEM_SNOWPOINT_CITY_POKE_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_PT",
+      "x": 18,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_OlderMan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS_PT",
+      "x": 17,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_Teenager",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_ItemPotion",
+      "flag": "FLAG_ITEM_SNOWPOINT_CITY_POTION"
+    },
+    {
+      "local_id": "LOCALID_SNOWPOINT_SHOVELER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_SNOW_PT",
+      "x": 34,
+      "y": 34,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_Shoveler",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SNOWPOINT_ELDER",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_PT",
+      "x": 9,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_Elder",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SNOWPOINT_CYNTHIA",
+      "graphics_id": "OBJ_EVENT_GFX_CYNTHIA_PT",
+      "x": 11,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_Cynthia",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SNOWPOINT_GARCHOMP",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GARCHOMP)",
+      "x": 12,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_Garchomp",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SNOWPOINT_BALL_SNORUNT",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 8,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_BallSnorunt",
+      "flag": "FLAG_HIDE_SNOWPOINT_CITY_BALL_SNORUNT"
+    },
+    {
+      "local_id": "LOCALID_SNOWPOINT_BALL_CRANIDOS",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 9,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_BallCranidos",
+      "flag": "FLAG_HIDE_SNOWPOINT_CITY_BALL_CRANIDOS"
+    },
+    {
+      "local_id": "LOCALID_SNOWPOINT_BALL_TANGELA",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SnowpointCity_EventScript_BallTangela",
+      "flag": "FLAG_HIDE_SNOWPOINT_CITY_BALL_TANGELA"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SNOWPOINT_CITY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_SNOWPOINT_CITY_PLAYERS_HOUSE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_SNOWPOINT_CITY_BARRYS_HOUSE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SNOWPOINT_CITY_NEIGHBORS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_SNOWPOINT_CITY_MART",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SNOWPOINT_INTRO_STATE",
+      "var_value": "3",
+      "script": "SnowpointCity_EventScript_BarryTooSlow"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 33,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_ShovelerBlocks"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 34,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_ShovelerBlocks"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 35,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_ShovelerBlocks"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 36,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_ShovelerBlocks"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 37,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_ShovelerBlocks"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "SnowpointCity_EventScript_TempleSteps"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "SnowpointCity_EventScript_GymDoor"
+    }
+  ],
+  "region": "REGION_HOENN"
+}

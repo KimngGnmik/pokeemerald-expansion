@@ -51,14 +51,14 @@
 
 #else
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_HIDE_SNOWPOINT_CITY_BARRY    0x20 // Barry has run off to the temple
+#define FLAG_ITEM_SNOWPOINT_CITY_POTION    0x21 // Potion behind Barry's house
+#define FLAG_ITEM_SNOWPOINT_CITY_POKE_BALL    0x22 // Poke Ball by the temple steps
+#define FLAG_ITEM_SNOWPOINT_CITY_NEVER_MELT_ICE    0x23 // Never-Melt Ice by the Snorunt kid
+#define FLAG_RECEIVED_OLD_GATEAU    0x24 // The neighbor's Old Gateau
+#define FLAG_HIDE_SNOWPOINT_CITY_BALL_SNORUNT    0x25 // Ceremony Poke Balls: hidden until the Elder lays them out, then once taken
+#define FLAG_HIDE_SNOWPOINT_CITY_BALL_CRANIDOS    0x26
+#define FLAG_HIDE_SNOWPOINT_CITY_BALL_TANGELA    0x27
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag

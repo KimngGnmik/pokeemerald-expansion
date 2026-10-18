@@ -1080,4 +1080,10 @@
 #define METATILE_RSMossdeepGym_Switch_Down           0x239
 #define METATILE_RSMossdeepGym_Switch_Up             0x238
 
+// gTileset_PlayersRoom
+#define METATILE_PlayersRoom_TV_Off_Left             0x205
+#define METATILE_PlayersRoom_TV_Off_Right            0x206
+#define METATILE_PlayersRoom_TV_On_Left              0x249
+#define METATILE_PlayersRoom_TV_On_Right             0x24A
+
 #endif // GUARD_METATILE_LABELS_H

@@ -16877,3 +16877,42 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BARRY_SNOWPOINT_SNORUNT ===
+Name: Barry
+Class: Rival
+Pic: Barry DP
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Snorunt
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BARRY_SNOWPOINT_CRANIDOS ===
+Name: Barry
+Class: Rival
+Pic: Barry DP
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Cranidos
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BARRY_SNOWPOINT_TANGELA ===
+Name: Barry
+Class: Rival
+Pic: Barry DP
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Tangela
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

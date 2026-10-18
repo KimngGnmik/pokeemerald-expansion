@@ -2494,3 +2494,71 @@ static const struct SpriteFrameImage sPicTable_MomFrlg[] = {
 };
 
 #endif // IS_FRLG
+
+static const struct SpriteFrameImage sPicTable_LucasNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_LucasNormalRunning, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_LucasFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_LucasFieldMove, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_DawnNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_DawnNormalRunning, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_DawnFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_DawnFieldMove, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Johanna[] = {
+    overworld_ascending_frames(gObjectEventPic_Johanna, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Barry[] = {
+    overworld_ascending_frames(gObjectEventPic_Barry, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SchoolKidMPt[] = {
+    overworld_ascending_frames(gObjectEventPic_SchoolKidMPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_YoungsterPt[] = {
+    overworld_ascending_frames(gObjectEventPic_YoungsterPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_WomanSnowPt[] = {
+    overworld_ascending_frames(gObjectEventPic_WomanSnowPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_OldManPt[] = {
+    overworld_ascending_frames(gObjectEventPic_OldManPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_LassPt[] = {
+    overworld_ascending_frames(gObjectEventPic_LassPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_ManSnowPt[] = {
+    overworld_ascending_frames(gObjectEventPic_ManSnowPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_CashierMPt[] = {
+    overworld_ascending_frames(gObjectEventPic_CashierMPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_PokefanFPt[] = {
+    overworld_ascending_frames(gObjectEventPic_PokefanFPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_OldWomanPt[] = {
+    overworld_ascending_frames(gObjectEventPic_OldWomanPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_CynthiaPt[] = {
+    overworld_ascending_frames(gObjectEventPic_CynthiaPt, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_ExpertPt[] = {
+    overworld_ascending_frames(gObjectEventPic_ExpertPt, 4, 4),
+};
