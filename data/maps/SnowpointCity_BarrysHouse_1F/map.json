@@ -1,7 +1,7 @@
 {
   "id": "MAP_SNOWPOINT_CITY_BARRYS_HOUSE_1F",
   "name": "SnowpointCity_BarrysHouse_1F",
-  "layout": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+  "layout": "LAYOUT_SNOWPOINT_CITY_BARRYS_HOUSE_1F",
   "music": "MUS_DP_SNOWPOINT_DAY",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_SNOWPOINT_CITY",

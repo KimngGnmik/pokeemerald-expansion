@@ -48,6 +48,7 @@
 #include "berry_powder.h"
 #include "mystery_gift.h"
 #include "union_room_chat.h"
+#include "constants/heal_locations.h"
 #include "constants/map_groups.h"
 #include "constants/items.h"
 #include "difficulty.h"
@@ -138,7 +139,10 @@ static void WarpToTruck(void)
     if (IS_FRLG)
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
     else
+    {
         SetWarpDestination(MAP_GROUP(MAP_SNOWPOINT_CITY_PLAYERS_HOUSE_2F), MAP_NUM(MAP_SNOWPOINT_CITY_PLAYERS_HOUSE_2F), WARP_ID_NONE, 3, 4); // in front of the TV
+        SetLastHealLocationWarp(HEAL_LOCATION_SNOWPOINT_CITY_PLAYERS_HOUSE_2F);
+    }
     WarpIntoMap();
 }
 

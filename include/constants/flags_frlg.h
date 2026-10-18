@@ -845,7 +845,6 @@
 #define FLAG_0x359               0x359
 #define FLAG_0x35A               0x35A
 #define FLAG_0x35B               0x35B
-#define FLAG_SET_WALL_CLOCK      0x35C
 #define FLAG_0x35D               0x35D
 #define FLAG_0x35E               0x35E
 #define FLAG_0x35F               0x35F
@@ -1511,8 +1510,6 @@
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0  // Always set after new game, object it hides is added directly
-#define FLAG_MET_RIVAL_MOM                   0
-#define FLAG_BIRCH_AIDE_MET                  0
 #define FLAG_DECLINED_BIKE                   0
 #define FLAG_RECEIVED_BIKE                   0
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0
@@ -1559,7 +1556,6 @@
 #define FLAG_DEFEATED_RIVAL_ROUTE103         0
 #define FLAG_RECEIVED_DOLL_LANETTE           0
 #define FLAG_RECEIVED_POTION_OLDALE          0
-#define FLAG_RECEIVED_AMULET_COIN            0
 #define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
 #define FLAG_RECEIVED_HM_CUT                 0
@@ -1720,7 +1716,6 @@
 #define FLAG_NOT_READY_FOR_BATTLE_ROUTE_120  0
 #define FLAG_RECEIVED_SS_TICKET              0
 #define FLAG_MET_RIVAL_LILYCOVE              0
-#define FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE 0
 #define FLAG_EXCHANGED_SCANNER               0
 #define FLAG_KECLEON_FLED_FORTREE            0
 #define FLAG_PETALBURG_MART_EXPANDED_ITEMS   0
@@ -1728,7 +1723,6 @@
 #define FLAG_RECEIVED_BELDUM                 0
 #define FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK   0
 #define FLAG_MET_FANCLUB_YOUNGER_BROTHER     0
-#define FLAG_RIVAL_LEFT_FOR_ROUTE103         0
 #define FLAG_OMIT_DIVE_FROM_STEVEN_LETTER    0
 #define FLAG_HAS_MATCH_CALL                  0
 #define FLAG_ADDED_MATCH_CALL_TO_POKENAV     0
@@ -2022,8 +2016,6 @@
 #define FLAG_HIDE_MEW                                               0
 #define FLAG_HIDE_ROUTE_104_RIVAL                                   0
 #define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH                  0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM          0
 #define FLAG_HIDE_ROUTE_103_RIVAL                                   0
 #define FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE                    0
 #define FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT                        0
@@ -2036,8 +2028,6 @@
 #define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP              0
 #define FLAG_HIDE_PLAYERS_HOUSE_DAD                                 0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING      0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING          0
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE             0
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY                               0
 #define FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY                           0
@@ -2046,24 +2036,13 @@
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT                          0
 #define FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN                       0
 #define FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT                          0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN            0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY                    0
 #define FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION                  0
 #define FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER                0
 #define FLAG_HIDE_SLATEPORT_CITY_SCOTT                              0
 #define FLAG_HIDE_ROUTE_101_ZIGZAGOON                               0
 #define FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY                           0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE                       0
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN              0
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1          0
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2          0
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM               0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM                0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM                    0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM      0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK              0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK                  0
 #define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE                      0
 #define FLAG_HIDE_MAUVILLE_CITY_SCOTT                               0
 #define FLAG_HIDE_VERDANTURF_TOWN_SCOTT                             0
@@ -2084,8 +2063,6 @@
 #define FLAG_HIDE_PETALBURG_GYM_GREETER                             0
 #define FLAG_HIDE_MARINE_CAVE_KYOGRE                                0
 #define FLAG_HIDE_TERRA_CAVE_GROUDON                                0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM          0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM              0
 #define FLAG_HIDE_ROUTE_119_SCOTT                                   0
 #define FLAG_HIDE_LILYCOVE_MOTEL_SCOTT                              0
 #define FLAG_HIDE_MOSSDEEP_CITY_SCOTT                               0
@@ -2094,8 +2071,6 @@
 #define FLAG_HIDE_FANCLUB_LITTLE_BOY                                0
 #define FLAG_HIDE_FANCLUB_LADY                                      0
 #define FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT               0
-#define FLAG_HIDE_LITTLEROOT_TOWN_RIVAL                             0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCH                             0
 #define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_1                          0
 #define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1                          0
 #define FLAG_HIDE_ROUTE_120_GABBY_AND_TY_1                          0
@@ -2109,14 +2084,9 @@
 #define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDAS_BOYFRIEND     0
 #define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE         0
 #define FLAG_HIDE_SS_TIDAL_CORRIDOR_SCOTT                           0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL     0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE      0
 #define FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN                     0
 #define FLAG_HIDE_RUSTBORO_CITY_RIVAL                               0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL     0
 #define FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE                           0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL       0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL           0
 #define FLAG_HIDE_ROUTE_112_TEAM_MAGMA                              0
 #define FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE                        0
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0
@@ -2136,7 +2106,6 @@
 #define FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY                       0
 #define FLAG_HIDE_BATTLE_FRONTIER_RECEPTION_GATE_SCOTT              0
 #define FLAG_HIDE_ROUTE_110_BIRCH                                   0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA     0
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1                             0
 #define FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN                      0
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN               0
@@ -2147,7 +2116,6 @@
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE                      0
 #define FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD                           0
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW            0
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL          0
 #define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP                   0
 #define FLAG_HIDE_ROUTE_119_RIVAL                                   0
 #define FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS                         0
@@ -2166,7 +2134,6 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0
 #define FLAG_HIDE_PETALBURG_GYM_WALLY                               0
 #define FLAG_UNKNOWN_0x363                                          0 // Set, however has no purpose.
-#define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                           0
 #define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY          0
 #define FLAG_HIDE_LANETTES_HOUSE_LANETTE                            0
 #define FLAG_HIDE_FALLARBOR_POKEMON_CENTER_LANETTE                  0
@@ -2187,14 +2154,12 @@
 #define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_ARCHIE           0
 #define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_CAPTAIN_STERN    0
 #define FLAG_HIDE_BATTLE_TOWER_OPPONENT                             0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL                  0
 #define FLAG_HIDE_ROUTE_119_TEAM_AQUA                               0
 #define FLAG_HIDE_ROUTE_116_MR_BRINEY                               0
 #define FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS                      0
 #define FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS                      0
 #define FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND                        0
 #define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_2         0
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380          0
 #define FLAG_HIDE_ROUTE_101_BIRCH                                   0
 #define FLAG_HIDE_ROUTE_103_BIRCH                                   0
 #define FLAG_HIDE_TRICK_HOUSE_END_MAN                               0
