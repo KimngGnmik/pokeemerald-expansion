@@ -34,6 +34,24 @@ const u16 gTilesetPalettes_TillbrookGatehouse[][16] =
     INCGFX_U16("data/tilesets/primary/tillbrook_gatehouse/palettes/12.pal", ".gbapal"),
 };
 
+const u32 gTilesetTiles_TillbrookGym[] = INCGFX_U32("data/tilesets/primary/tillbrook_gym/tiles.png", ".4bpp.smol");
+const u16 gTilesetPalettes_TillbrookGym[][16] =
+{
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/tillbrook_gym/palettes/12.pal", ".gbapal"),
+};
+
 const u32 gTilesetTiles_SecretBase[] = INCGFX_U32("data/tilesets/primary/secret_base/tiles.png", ".4bpp");
 
 const u16 gTilesetPalettes_SecretBase[][16] =

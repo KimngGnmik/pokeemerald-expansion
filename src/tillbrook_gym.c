@@ -10,21 +10,24 @@
 #include "constants/event_objects.h"
 #include "constants/flags.h"
 #include "constants/maps.h"
+#include "constants/metatile_labels.h"
 #include "constants/songs.h"
 #include "constants/species.h"
 
-// Local IDs 1-3 are the cows. Coordinates exclude MAP_OFFSET.
+// Local IDs 1-3 are the cows, from the entrance pen up. Coordinates exclude MAP_OFFSET.
 static const struct
 {
     u16 flag;
     u8 startX, startY;
     u8 stallX, stallY;
-    u8 gateY;
+    u8 gateX, gateY;
+    u8 penTop, penBottom;
+    u8 spareX, spareY;
 } sStalls[] =
 {
-    {FLAG_TILLBROOK_STALL_1, 4, 23, 2, 22, 20},
-    {FLAG_TILLBROOK_STALL_2, 6, 16, 8, 15, 13},
-    {FLAG_TILLBROOK_STALL_3, 4,  9, 2,  8,  6},
+    {FLAG_TILLBROOK_STALL_1, 5, 28,  1, 25, 7, 24, 25, 32, 5, 29},
+    {FLAG_TILLBROOK_STALL_2, 6, 20, 14, 17, 7, 16, 17, 23, 6, 21},
+    {FLAG_TILLBROOK_STALL_3, 4, 13, 11,  9, 7,  8,  9, 15, 4, 14},
 };
 
 static bool8 sRestoreObjects;
@@ -37,9 +40,9 @@ static bool8 IsGym(void)
 
 static void UpdateGate(u32 stall)
 {
-    // Original Petalburg Gym timber railing and plank floor.
-    MapGridSetMetatileIdAt(5 + MAP_OFFSET, sStalls[stall].gateY + MAP_OFFSET,
-                         FlagGet(sStalls[stall].flag) ? 0x201 : 0x203 | MAPGRID_COLLISION_MASK);
+    MapGridSetMetatileIdAt(sStalls[stall].gateX + MAP_OFFSET, sStalls[stall].gateY + MAP_OFFSET,
+                           FlagGet(sStalls[stall].flag) ? METATILE_TillbrookGym_GateOpen
+                                                         : METATILE_TillbrookGym_GateClosed | MAPGRID_COLLISION_MASK);
 }
 
 bool8 IsTillbrookGymMiltank(const struct ObjectEvent *objectEvent)
@@ -98,7 +101,10 @@ static void RestoreCow(u32 i)
     // Don't put the cow on top of the player.
     if (!solved && player->currentCoords.x == x + MAP_OFFSET
      && player->currentCoords.y == y + MAP_OFFSET)
-        x = 5;
+    {
+        x = sStalls[i].spareX;
+        y = sStalls[i].spareY;
+    }
 
     SetObjEventTemplateCoords(i + 1, x, y);
     if (!TryGetObjectEventIdByLocalIdAndMap(i + 1, MAP_NUM(MAP_TILLBROOK_TOWN_GYM),
@@ -129,7 +135,7 @@ void TillbrookGym_ResetSection(void)
 
     for (i = 0; i < ARRAY_COUNT(sStalls); i++)
     {
-        if (y > sStalls[i].gateY && y <= sStalls[i].startY + (i == 0 ? 3 : 2)
+        if (y >= sStalls[i].penTop && y <= sStalls[i].penBottom
          && !FlagGet(sStalls[i].flag))
             RestoreCow(i);
     }

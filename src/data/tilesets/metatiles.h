@@ -423,6 +423,9 @@ const u16 gMetatileAttributes_SnowpointCity[] = INCBIN_U16("data/tilesets/second
 const u16 gMetatiles_TillbrookGatehouse[] = INCBIN_U16("data/tilesets/primary/tillbrook_gatehouse/metatiles.bin");
 const u16 gMetatileAttributes_TillbrookGatehouse[] = INCBIN_U16("data/tilesets/primary/tillbrook_gatehouse/metatile_attributes.bin");
 
+const u16 gMetatiles_TillbrookGym[] = INCBIN_U16("data/tilesets/primary/tillbrook_gym/metatiles.bin");
+const u16 gMetatileAttributes_TillbrookGym[] = INCBIN_U16("data/tilesets/primary/tillbrook_gym/metatile_attributes.bin");
+
 const u16 gMetatiles_Tillbrook[] = INCBIN_U16("data/tilesets/secondary/tillbrook/metatiles.bin");
 const u16 gMetatileAttributes_Tillbrook[] = INCBIN_U16("data/tilesets/secondary/tillbrook/metatile_attributes.bin");
 

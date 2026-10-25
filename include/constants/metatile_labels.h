@@ -1,6 +1,10 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_TillbrookGym
+#define METATILE_TillbrookGym_GateClosed 0x00F
+#define METATILE_TillbrookGym_GateOpen 0x010
+
 // gTileset_SnowpointCity
 #define METATILE_SnowpointCity_GateVoid 0x3A6
 

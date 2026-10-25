@@ -1653,6 +1653,17 @@ const struct Tileset gTileset_TillbrookGatehouse =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_TillbrookGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_TillbrookGym,
+    .palettes = gTilesetPalettes_TillbrookGym,
+    .metatiles = gMetatiles_TillbrookGym,
+    .metatileAttributes = gMetatileAttributes_TillbrookGym,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_TillbrookSnow =
 {
     .isCompressed = TRUE,

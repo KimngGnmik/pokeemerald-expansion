@@ -114,9 +114,9 @@ TillbrookTown_Gym_Text_Guide:
 	.string "it. No HM or Badge is needed here!\p"
 	.string "You must stand behind it. You can't\n"
 	.string "pull it, so leave room to walk around.\p"
-	.string "Stuck? Use the wall switch on the\n"
-	.string "right of your pen to reset that cow.\p"
-	.string "If it blocks the switch, talk to the\n"
+	.string "Stuck? Ring the bell on the post\n"
+	.string "in your pen to reset that cow.\p"
+	.string "If it blocks the post, talk to the\n"
 	.string "Miltank to call it back instead.\p"
 	.string "Leaving or reloading resets cows\n"
 	.string "that aren't stalled. Open gates stay!\p"
@@ -133,7 +133,7 @@ TillbrookTown_Gym_Text_Miltank:
 	.string "back to its starting spot?$"
 
 TillbrookTown_Gym_Text_ResetPrompt:
-	.string "A barn bell switch.\p"
+	.string "A bell hangs from the post.\p"
 	.string "Return this pen's unstalled Miltank\n"
 	.string "to its starting spot?$"
 
