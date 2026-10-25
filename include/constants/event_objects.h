@@ -430,6 +430,10 @@ enum
     OBJ_EVENT_GFX_OLD_WOMAN_PT,
     OBJ_EVENT_GFX_CYNTHIA_PT,
     OBJ_EVENT_GFX_EXPERT_PT,
+    OBJ_EVENT_GFX_BUG_CATCHER_PT,
+    OBJ_EVENT_GFX_SKIER_F_PT,
+    OBJ_EVENT_GFX_HIKER_PT,
+    OBJ_EVENT_GFX_PAUL,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -565,6 +569,10 @@ enum
 #define OBJ_EVENT_PAL_TAG_OLD_WOMAN_PT            0x1140
 #define OBJ_EVENT_PAL_TAG_CYNTHIA_PT              0x1141
 #define OBJ_EVENT_PAL_TAG_EXPERT_PT               0x1142
+#define OBJ_EVENT_PAL_TAG_BUG_CATCHER_PT              0x1143
+#define OBJ_EVENT_PAL_TAG_SKIER_F_PT                  0x1144
+#define OBJ_EVENT_PAL_TAG_HIKER_PT                    0x1145
+#define OBJ_EVENT_PAL_TAG_PAUL                        0x1146
 #define OBJ_EVENT_PAL_TAG_MAY_REFLECTION          0x1111
 #define OBJ_EVENT_PAL_TAG_MOVING_BOX              0x1112
 #define OBJ_EVENT_PAL_TAG_CABLE_CAR               0x1113

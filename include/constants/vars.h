@@ -99,7 +99,7 @@
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
 #define VAR_SNOWPOINT_INTRO_STATE                        0x404E // 0 = TV news, 1 = meet Mom, 2 = meet Barry outside, 3 = racing Barry to the temple, 4 = past the "too slow" check, 5 = choosing a starter, 10 = ceremony over
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
-#define VAR_UNUSED_0x4050                                0x4050 // Unused Var
+#define VAR_ROUTE217_STATE                               0x4050 // 0 = Barry waiting past the gate, 1 = he caught his Bidoof and ran ahead
 #define VAR_OLDALE_TOWN_STATE                            0x4051
 #define VAR_DEWFORD_TOWN_STATE                           0x4052 // Unused Var
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
@@ -149,8 +149,8 @@
 #define VAR_ROUTE132_STATE                               0x407F // Unused Var
 #define VAR_ROUTE133_STATE                               0x4080 // Unused Var
 #define VAR_ROUTE134_STATE                               0x4081 // Unused Var
-#define VAR_UNUSED_0x4082                                0x4082 // Unused Var
-#define VAR_UNUSED_0x4083                                0x4083 // Unused Var
+#define VAR_TILLBROOK_STORY                              0x4082 // 0 arrival, 1 Barry battle done, 2 Gym sequence, 3 Paul done
+#define VAR_TILLBROOK_PRE_PAUL_FAINTED                    0x4083
 #define VAR_BIRCH_LAB_STATE                              0x4084
 #define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE                           0x4086

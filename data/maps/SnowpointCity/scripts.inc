@@ -4,7 +4,7 @@ SnowpointCity_MapScripts::
 	.byte 0
 
 SnowpointCity_OnTransition:
-	call_if_set FLAG_SYS_POKEMON_GET, SnowpointCity_EventScript_ShovelerStepsAside
+	call_if_set FLAG_SYS_TRAINER_CARD_GET, SnowpointCity_EventScript_ShovelerStepsAside
 	call SnowpointCity_EventScript_SetUpCeremony
 	end
 
@@ -29,7 +29,7 @@ SnowpointCity_EventScript_BarryWaitsAtTemple::
 	setobjectmovementtype LOCALID_SNOWPOINT_BARRY, MOVEMENT_TYPE_JOG_IN_PLACE_DOWN
 	return
 
-@ Once the player has a partner, the shoveler stands off the road beside the east exit.
+@ Once the player has seen Mom after the ceremony, the shoveler stands off the road beside the east exit.
 SnowpointCity_EventScript_ShovelerStepsAside::
 	setobjectxyperm LOCALID_SNOWPOINT_SHOVELER, 33, 32
 	setobjectmovementtype LOCALID_SNOWPOINT_SHOVELER, MOVEMENT_TYPE_FACE_DOWN
@@ -245,7 +245,7 @@ SnowpointCity_EventScript_BallSnorunt::
 	hidemonpic
 	goto_if_eq VAR_RESULT, NO, SnowpointCity_EventScript_NotThisOne
 	setvar VAR_STARTER_MON, 0
-	givemon SPECIES_SNORUNT, 5
+	givemon SPECIES_SNORUNT, 5, speedIv=31
 	removeobject LOCALID_SNOWPOINT_BALL_SNORUNT
 	bufferspeciesname STR_VAR_1, SPECIES_SNORUNT
 	msgbox SnowpointCity_Text_ElderAboutSnorunt, MSGBOX_DEFAULT
@@ -259,7 +259,7 @@ SnowpointCity_EventScript_BallCranidos::
 	hidemonpic
 	goto_if_eq VAR_RESULT, NO, SnowpointCity_EventScript_NotThisOne
 	setvar VAR_STARTER_MON, 1
-	givemon SPECIES_CRANIDOS, 5
+	givemon SPECIES_CRANIDOS, 5, atkIv=31
 	removeobject LOCALID_SNOWPOINT_BALL_CRANIDOS
 	bufferspeciesname STR_VAR_1, SPECIES_CRANIDOS
 	msgbox SnowpointCity_Text_ElderAboutCranidos, MSGBOX_DEFAULT
@@ -273,7 +273,7 @@ SnowpointCity_EventScript_BallTangela::
 	hidemonpic
 	goto_if_eq VAR_RESULT, NO, SnowpointCity_EventScript_NotThisOne
 	setvar VAR_STARTER_MON, 2
-	givemon SPECIES_TANGELA, 5
+	givemon SPECIES_TANGELA, 5, spDefIv=31
 	removeobject LOCALID_SNOWPOINT_BALL_TANGELA
 	bufferspeciesname STR_VAR_1, SPECIES_TANGELA
 	msgbox SnowpointCity_Text_ElderAboutTangela, MSGBOX_DEFAULT
@@ -283,16 +283,9 @@ SnowpointCity_EventScript_NotThisOne::
 	releaseall
 	end
 
-@ After the ceremony, the ball left on the altar is kept for the other new trainer.
+@ After the ceremony, the ball left on the altar is kept for Paul.
 SnowpointCity_EventScript_ReservedBall::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, SnowpointCity_EventScript_ReservedBallDawn
-	msgbox SnowpointCity_Text_ReservedForLucas, MSGBOX_DEFAULT
-	releaseall
-	end
-
-SnowpointCity_EventScript_ReservedBallDawn::
-	msgbox SnowpointCity_Text_ReservedForDawn, MSGBOX_DEFAULT
+	msgbox SnowpointCity_Text_ReservedForPaul, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -360,7 +353,8 @@ SnowpointCity_EventScript_BarryTakesCranidos::
 	waitmovement 0
 	bufferspeciesname STR_VAR_2, SPECIES_CRANIDOS
 	call SnowpointCity_EventScript_BarryPicks
-	call SnowpointCity_EventScript_RemainingBall
+	msgbox SnowpointCity_Text_RemainingGoesToPaul, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_SNOWPOINT_BARRY, SnowpointCity_Movement_BarryFromMiddleBall
 	waitmovement 0
 	goto SnowpointCity_EventScript_BarryBattle
@@ -370,7 +364,8 @@ SnowpointCity_EventScript_BarryTakesTangela::
 	waitmovement 0
 	bufferspeciesname STR_VAR_2, SPECIES_TANGELA
 	call SnowpointCity_EventScript_BarryPicks
-	call SnowpointCity_EventScript_RemainingBall
+	msgbox SnowpointCity_Text_RemainingGoesToPaul, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_SNOWPOINT_BARRY, SnowpointCity_Movement_BarryFromRightBall
 	waitmovement 0
 	goto SnowpointCity_EventScript_BarryBattle
@@ -380,7 +375,8 @@ SnowpointCity_EventScript_BarryTakesSnorunt::
 	waitmovement 0
 	bufferspeciesname STR_VAR_2, SPECIES_SNORUNT
 	call SnowpointCity_EventScript_BarryPicks
-	call SnowpointCity_EventScript_RemainingBall
+	msgbox SnowpointCity_Text_RemainingGoesToPaul, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_SNOWPOINT_BARRY, SnowpointCity_Movement_BarryFromLeftBall
 	waitmovement 0
 	goto SnowpointCity_EventScript_BarryBattle
@@ -410,21 +406,6 @@ SnowpointCity_EventScript_RemoveTangelaBall::
 SnowpointCity_EventScript_RemoveSnoruntBall::
 	removeobject LOCALID_SNOWPOINT_BALL_SNORUNT
 	goto SnowpointCity_EventScript_BarryPicksEnd
-
-SnowpointCity_EventScript_RemainingBall::
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, SnowpointCity_EventScript_RemainingBallDawn
-	call_if_eq VAR_RESULT, FEMALE, SnowpointCity_EventScript_RemainingBallLucas
-	closemessage
-	return
-
-SnowpointCity_EventScript_RemainingBallDawn::
-	msgbox SnowpointCity_Text_RemainingGoesToDawn, MSGBOX_DEFAULT
-	return
-
-SnowpointCity_EventScript_RemainingBallLucas::
-	msgbox SnowpointCity_Text_RemainingGoesToLucas, MSGBOX_DEFAULT
-	return
 
 @ Barry has stepped round to (9, 12), just below the player.
 SnowpointCity_EventScript_BarryBattle::
@@ -467,6 +448,7 @@ SnowpointCity_EventScript_AfterBarryBattle::
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
+	special EnableNationalPokedex
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	msgbox SnowpointCity_Text_BarryReceivedPokedex, MSGBOX_DEFAULT
 	closemessage
@@ -634,24 +616,30 @@ SnowpointCity_Movement_CynthiaGoesBack:
 	face_down
 	step_end
 
+@ From (9, 12), out along row 13 toward the east gate and Route 217; he is off screen by (18, 13).
 SnowpointCity_Movement_BarryRunOff:
 	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
 	step_end
 
 @ ---------------------------------------------------------------- east exit (to Route 217)
-@ Triggers on the three road tiles in front of the shoveler; they do nothing once the player has a POKéMON.
+@ Triggers on the road tiles in front of the shoveler. Before the ceremony the road is buried;
+@ after it he sends the player home to see Mom first. Once Mom has given the Trainer Card they do nothing.
 SnowpointCity_EventScript_ShovelerBlocks::
-	goto_if_set FLAG_SYS_POKEMON_GET, SnowpointCity_EventScript_ShovelerBlocksEnd
+	goto_if_set FLAG_SYS_TRAINER_CARD_GET, SnowpointCity_EventScript_ShovelerBlocksEnd
 	lockall
 	applymovement LOCALID_SNOWPOINT_SHOVELER, Common_Movement_FaceLeft
 	waitmovement 0
-	msgbox SnowpointCity_Text_RoadIsBuried, MSGBOX_DEFAULT
+	call_if_unset FLAG_SYS_POKEMON_GET, SnowpointCity_EventScript_ShovelerSaysBuried
+	call_if_set FLAG_SYS_POKEMON_GET, SnowpointCity_EventScript_ShovelerSaysSeeMom
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, SnowpointCity_Movement_StepBackWest
 	waitmovement 0
@@ -663,11 +651,20 @@ SnowpointCity_Movement_StepBackWest:
 	walk_left
 	step_end
 
+SnowpointCity_EventScript_ShovelerSaysBuried::
+	msgbox SnowpointCity_Text_RoadIsBuried, MSGBOX_DEFAULT
+	return
+
+SnowpointCity_EventScript_ShovelerSaysSeeMom::
+	msgbox SnowpointCity_Text_SeeYourMomFirst, MSGBOX_DEFAULT
+	return
+
 SnowpointCity_EventScript_Shoveler::
 	lock
 	faceplayer
-	goto_if_set FLAG_SYS_POKEMON_GET, SnowpointCity_EventScript_ShovelerRoadClear
-	msgbox SnowpointCity_Text_RoadIsBuried, MSGBOX_DEFAULT
+	goto_if_set FLAG_SYS_TRAINER_CARD_GET, SnowpointCity_EventScript_ShovelerRoadClear
+	call_if_unset FLAG_SYS_POKEMON_GET, SnowpointCity_EventScript_ShovelerSaysBuried
+	call_if_set FLAG_SYS_POKEMON_GET, SnowpointCity_EventScript_ShovelerSaysSeeMom
 	release
 	end
 
@@ -783,23 +780,31 @@ SnowpointCity_Text_OlderMan:
 SnowpointCity_Text_Teenager:
 	.string "The League held a tournament to choose\n"
 	.string "the new Champion.\p"
-	.string "One TRAINER fought through every round\n"
+	.string "One Trainer fought through every round\n"
 	.string "and never lost a single battle.$"
 
 SnowpointCity_Text_GymDoor:
-	.string "Snowpoint City POKéMON Gym\n"
+	.string "Snowpoint City Pokémon Gym\n"
 	.string "Leader: Elder\p"
 	.string "The door won't open.$"
 
 SnowpointCity_Text_RoadIsBuried:
 	.string "Whoa there! The road's still buried\n"
 	.string "from last night's snow.\p"
-	.string "Without a POKéMON you'd get lost\n"
+	.string "Without a Pokémon you'd get lost\n"
 	.string "in the drifts out there.$"
+
+SnowpointCity_Text_SeeYourMomFirst:
+	.string "Hold on there! I saw your Pokémon\n"
+	.string "at the ceremony. Congratulations!\p"
+	.string "But your mom was out here looking\n"
+	.string "for you earlier.\p"
+	.string "Go home and see her before you head\n"
+	.string "out. The road can wait a minute.$"
 
 SnowpointCity_Text_RoadIsClear:
 	.string "Road's clear! Route 217 is that way.\p"
-	.string "Stay close to your POKéMON.\n"
+	.string "Stay close to your Pokémon.\n"
 	.string "The snow gets deep fast.$"
 
 SnowpointCity_Text_BarryYouMadeIt:
@@ -836,7 +841,7 @@ SnowpointCity_Text_ElderCeremony:
 	.string "Elder: Every child of this town who\n"
 	.string "turns ten takes part in the ceremony.\p"
 	.string "Today, that is the two of you.\p"
-	.string "Three POKéMON were raised in this\n"
+	.string "Three Pokémon were raised in this\n"
 	.string "temple for this day.$"
 
 SnowpointCity_Text_ElderChoose:
@@ -852,19 +857,19 @@ SnowpointCity_Text_ElderPatience:
 
 SnowpointCity_Text_ElderPokemonWaiting:
 	.string "Elder: {PLAYER}, where are you going?\n"
-	.string "The POKéMON are waiting for you.$"
+	.string "The Pokémon are waiting for you.$"
 
 SnowpointCity_Text_ChooseSnorunt:
 	.string "Will you take Snorunt,\n"
-	.string "the ICE-type POKéMON?$"
+	.string "the Ice-type Pokémon?$"
 
 SnowpointCity_Text_ChooseCranidos:
 	.string "Will you take Cranidos,\n"
-	.string "the ROCK-type POKéMON?$"
+	.string "the Rock-type Pokémon?$"
 
 SnowpointCity_Text_ChooseTangela:
 	.string "Will you take Tangela,\n"
-	.string "the GRASS-type POKéMON?$"
+	.string "the Grass-type Pokémon?$"
 
 SnowpointCity_Text_ReceivedStarter:
 	.string "{PLAYER} received the {STR_VAR_1}!$"
@@ -876,13 +881,10 @@ SnowpointCity_Text_BarryLookAtThat:
 	.string "Barry: Look at that! {STR_VAR_2} and I\n"
 	.string "are going to be the best!$"
 
-SnowpointCity_Text_RemainingGoesToDawn:
-	.string "Elder: The remaining POKéMON will\n"
-	.string "go to Dawn.$"
-
-SnowpointCity_Text_RemainingGoesToLucas:
-	.string "Elder: The remaining POKéMON will\n"
-	.string "go to Lucas.$"
+SnowpointCity_Text_RemainingGoesToPaul:
+	.string "Elder: The remaining Pokémon will go\n"
+	.string "to a boy named Paul, from Veilstone\l"
+	.string "City.$"
 
 SnowpointCity_Text_BarryGoingToBeChampion:
 	.string "Barry: I'm going to be Champion!\n"
@@ -924,13 +926,9 @@ SnowpointCity_Text_ElderAboutTangela:
 	.string "of the old ropes.\p"
 	.string "Some say that is no accident.$"
 
-SnowpointCity_Text_ReservedForDawn:
-	.string "The POKé BALL left on the altar.\n"
-	.string "The Elder is keeping it for Dawn.$"
-
-SnowpointCity_Text_ReservedForLucas:
-	.string "The POKé BALL left on the altar.\n"
-	.string "The Elder is keeping it for Lucas.$"
+SnowpointCity_Text_ReservedForPaul:
+	.string "The Poké Ball left on the altar.\n"
+	.string "The Elder is keeping it for Paul.$"
 
 SnowpointCity_Text_BarryLetsBattle:
 	.string "Barry: That was great!\n"
@@ -952,19 +950,19 @@ SnowpointCity_Text_BarryVictory:
 SnowpointCity_Text_CynthiaPokedex:
 	.string "Cynthia: Well done, both of you.\p"
 	.string "I have something for you, {PLAYER}.\p"
-	.string "This is a POKéDEX. It records every\n"
-	.string "POKéMON you meet.\p"
+	.string "This is a Pokédex. It records every\n"
+	.string "Pokémon you meet.\p"
 	.string "I could use the help with my\n"
 	.string "research.$"
 
 SnowpointCity_Text_ReceivedPokedex:
-	.string "{PLAYER} received the POKéDEX!$"
+	.string "{PLAYER} received the Pokédex!$"
 
 SnowpointCity_Text_BarryReceivedPokedex:
-	.string "Barry received a POKéDEX too!$"
+	.string "Barry received a Pokédex too!$"
 
 SnowpointCity_Text_ElderPokeBalls:
-	.string "Elder: Here are a few POKé BALLS\n"
+	.string "Elder: Here are a few Poké Balls\n"
 	.string "as well.$"
 
 SnowpointCity_Text_ElderGym:

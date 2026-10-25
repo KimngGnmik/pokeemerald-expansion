@@ -520,6 +520,19 @@ void StartWallyTutorialBattle(void)
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
 }
 
+// Barry catches a Bidoof on Route 217.
+void StartBarryTutorialBattle(void)
+{
+    u32 personality = GetMonPersonality(SPECIES_BIDOOF, MON_GENDER_RANDOM, NATURE_HARDY, RANDOM_UNOWN_LETTER);
+
+    CreateMonWithIVs(&gParties[B_TRAINER_OPPONENT_A][0], SPECIES_BIDOOF, 5, personality, OTID_STRUCT_PLAYER_ID, MAX_PER_STAT_IVS);
+    GiveMonInitialMoveset(&gParties[B_TRAINER_OPPONENT_A][0]);
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    gBattleTypeFlags = BATTLE_TYPE_CATCH_TUTORIAL;
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
+}
+
 void StartOldManTutorialBattle(void)
 {
     CreateMaleMon(&gParties[B_TRAINER_OPPONENT_A][0], SPECIES_WEEDLE, 5);
@@ -1463,7 +1476,7 @@ void BattleSetup_StartTrainerBattle(void)
         }
     }
 
-    if (TRAINER_BATTLE_PARAM.earlyRival && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
+    if (TRAINER_BATTLE_PARAM.earlyRival && (GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL) == RIVAL_BATTLE_TUTORIAL)
         gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
 
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
@@ -1592,7 +1605,7 @@ static void CB2_EndTrainerBattle(void)
             {
                 HealPlayerParty();
             }
-            else
+            else if (!(GetRivalBattleFlags() & RIVAL_BATTLE_NO_WHITEOUT))
             {
                 SetMainCallback2(CB2_WhiteOut);
                 return;

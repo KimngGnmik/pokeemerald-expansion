@@ -9259,6 +9259,19 @@
       "layout_version": "frlg"
     },
     {
+      "id": "LAYOUT_TILLBROOK_TOWN",
+      "name": "TillbrookTown_Layout",
+      "width": 44,
+      "height": 50,
+      "primary_tileset": "gTileset_TillbrookSnow",
+      "secondary_tileset": "gTileset_Tillbrook",
+      "border_filepath": "data/layouts/TillbrookTown/border.bin",
+      "blockdata_filepath": "data/layouts/TillbrookTown/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "layout_version": "emerald"
+    },
+    {
       "id": "LAYOUT_SNOWPOINT_CITY",
       "name": "SnowpointCity_Layout",
       "width": 36,
@@ -9275,7 +9288,7 @@
       "id": "LAYOUT_ROUTE217",
       "name": "Route217_Layout",
       "width": 20,
-      "height": 40,
+      "height": 44,
       "primary_tileset": "gTileset_Snow",
       "secondary_tileset": "gTileset_SnowpointCity",
       "border_filepath": "data/layouts/Route217/border.bin",
@@ -9304,6 +9317,45 @@
       "secondary_tileset": "gTileset_PlayersRoom",
       "border_filepath": "data/layouts/SnowpointCity_PlayersHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/SnowpointCity_PlayersHouse_2F/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE217_HOLLOW",
+      "name": "Route217_Hollow_Layout",
+      "width": 24,
+      "height": 18,
+      "primary_tileset": "gTileset_GeneralGrey",
+      "secondary_tileset": "gTileset_CaveGrey",
+      "border_filepath": "data/layouts/Route217_Hollow/border.bin",
+      "blockdata_filepath": "data/layouts/Route217_Hollow/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_TILLBROOK_TOWN_GYM",
+      "name": "TillbrookTown_Gym_Layout",
+      "width": 11,
+      "height": 28,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/TillbrookTown_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/TillbrookTown_Gym/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_TILLBROOK_TOWN_GATEHOUSE",
+      "name": "TillbrookTown_Gatehouse_Layout",
+      "width": 12,
+      "height": 15,
+      "primary_tileset": "gTileset_TillbrookGatehouse",
+      "secondary_tileset": "gTileset_InsideOfTruck",
+      "border_filepath": "data/layouts/TillbrookTown_Gatehouse/border.bin",
+      "blockdata_filepath": "data/layouts/TillbrookTown_Gatehouse/map.bin",
+      "border_height": 2,
+      "border_width": 2,
       "layout_version": "emerald"
     }
   ]

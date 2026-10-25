@@ -484,6 +484,8 @@ const u32 gTrainerFrontPic_ArtistDP[] = INCGFX_U32("graphics/trainers/front_pics
 const u16 gTrainerPalette_ArtistDP[] = INCGFX_U16("graphics/trainers/front_pics/artist_dp.png", ".gbapal");
 const u32 gTrainerFrontPic_BarryDP[] = INCGFX_U32("graphics/trainers/front_pics/barry_dp.png", ".4bpp.smol");
 const u16 gTrainerPalette_BarryDP[] = INCGFX_U16("graphics/trainers/front_pics/barry_dp.png", ".gbapal");
+const u32 gTrainerFrontPic_Paul[] = INCGFX_U32("graphics/trainers/front_pics/paul.png", ".4bpp.smol");
+const u16 gTrainerPalette_Paul[] = INCGFX_U16("graphics/trainers/front_pics/paul.png", ".gbapal");
 const u32 gTrainerFrontPic_BattleGirlDP[] = INCGFX_U32("graphics/trainers/front_pics/battle_girl_dp.png", ".4bpp.smol");
 const u16 gTrainerPalette_BattleGirlDP[] = INCGFX_U16("graphics/trainers/front_pics/battle_girl_dp.png", ".gbapal");
 const u32 gTrainerFrontPic_BeautyDP[] = INCGFX_U32("graphics/trainers/front_pics/beauty_dp.png", ".4bpp.smol");
@@ -667,8 +669,10 @@ const u8 gTrainerBackPic_Steven[] = INCGFX_U8("graphics/trainers/back_pics/steve
 const u8 gTrainerBackPic_Pokedude[] = INCGFX_U8("graphics/trainers/back_pics/pokedude.png", ".4bpp");
 const u8 gTrainerBackPic_Lucas[] = INCGFX_U8("graphics/trainers/back_pics/lucas.png", ".4bpp");
 const u8 gTrainerBackPic_Dawn[] = INCGFX_U8("graphics/trainers/back_pics/dawn.png", ".4bpp");
+const u8 gTrainerBackPic_Barry[] = INCGFX_U8("graphics/trainers/back_pics/barry.png", ".4bpp");
 const u16 gTrainerBackPicPalette_Lucas[] = INCGFX_U16("graphics/trainers/back_pics/lucas.pal", ".gbapal");
 const u16 gTrainerBackPicPalette_Dawn[] = INCGFX_U16("graphics/trainers/back_pics/dawn.pal", ".gbapal");
+const u16 gTrainerBackPicPalette_Barry[] = INCGFX_U16("graphics/trainers/back_pics/barry.pal", ".gbapal");
 const u8 gTrainerBackPic_OldMan[] = INCGFX_U8("graphics/trainers/back_pics/old_man.png", ".4bpp");
 
 const u16 gTrainerBackPicPalette_Red[] = INCGFX_U16("graphics/trainers/back_pics/red.png", ".gbapal");
@@ -1444,6 +1448,12 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_BARRY_DP] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_BarryDP, gTrainerPalette_BarryDP),
+        // Platinum back sprite, used when Barry catches Bidoof on Route 217
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Barry, gTrainerBackPicPalette_Barry, sBackAnims_Kanto),
+    },
+    [TRAINER_PIC_PAUL] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Paul, gTrainerPalette_Paul),
     },
     [TRAINER_PIC_BATTLE_GIRL_DP] =
     {

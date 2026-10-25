@@ -40,7 +40,7 @@ RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "by POKéMON outside of battle.\p"
 	.string "Any POKéMON that's learned CUT can\n"
 	.string "chop down thin trees if the TRAINER\l"
-	.string "has earned the STONE BADGE.\p"
+	.string "has earned the FURROW BADGE.\p"
 	.string "And, unlike a TM, an HM can be used\n"
 	.string "more than once.$"
 
@@ -49,4 +49,3 @@ RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:
 	.string "RUSTBORO, my dad helped out.\p"
 	.string "He made his POKéMON use CUT to clear\n"
 	.string "the land of trees.$"
-

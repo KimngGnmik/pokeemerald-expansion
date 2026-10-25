@@ -17,6 +17,7 @@
 #include "constants/rgb.h"
 #include "constants/layouts.h"
 #include "constants/metatile_behaviors.h"
+#include "constants/metatile_labels.h"
 #include "constants/metatile_behaviors_frlg.h"
 #include "wild_encounter.h"
 
@@ -37,6 +38,8 @@ COMMON_DATA struct BackupMapLayout gBackupMapLayout = {0};
 
 static const struct ConnectionFlags sDummyConnectionFlags = {0};
 
+static const u16 sTillbrookSeasonalBorder[] = INCBIN_U16("data/layouts/TillbrookTown/seasonal_border.bin");
+
 static void InitMapLayoutData(const struct MapHeader *mapHeader);
 static void InitBackupMapLayoutData(const u16 *map, u16 width, u16 height);
 static void FillSouthConnection(struct MapHeader const *mapHeader, struct MapHeader const *connectedMapHeader, s32 offset);
@@ -53,6 +56,23 @@ static bool8 IsCoordInIncomingConnectingMap(s32 coord, s32 srcMax, s32 destMax, 
 static inline u16 GetBorderBlockAt(int x, int y)
 {
     const struct MapLayout *mapLayout = gMapHeader.mapLayout;
+
+    if (gMapHeader.mapLayoutId == LAYOUT_ROUTE217 && y >= MAP_OFFSET + mapLayout->height)
+        return METATILE_SnowpointCity_GateVoid | MAPGRID_IMPASSABLE;
+
+    if (gMapHeader.mapLayoutId == LAYOUT_TILLBROOK_TOWN)
+    {
+        int row = y - MAP_OFFSET;
+        int height = ARRAY_COUNT(sTillbrookSeasonalBorder) / 2;
+
+        // Repeat only the end pairs outside the town, not the entire snow/grass strip.
+        if (row < 0)
+            row &= 1;
+        else if (row >= height)
+            row = height - 2 + (row & 1);
+
+        return sTillbrookSeasonalBorder[row * 2 + ((x - MAP_OFFSET) & 1)] | MAPGRID_IMPASSABLE;
+    }
 
     if (mapLayout->isFrlg)
     {

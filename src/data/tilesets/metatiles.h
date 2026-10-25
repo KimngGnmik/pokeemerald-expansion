@@ -413,10 +413,18 @@ const u16 gMetatiles_SnowTest[] = INCBIN_U16("data/tilesets/secondary/snow_test/
 const u16 gMetatileAttributes_SnowTest[] = INCBIN_U16("data/tilesets/secondary/snow_test/metatile_attributes.bin");
 
 const u16 gMetatiles_Snow[] = INCBIN_U16("data/tilesets/primary/snow/metatiles.bin");
+const u16 gMetatiles_TillbrookSnow[] = INCBIN_U16("data/tilesets/primary/tillbrook_snow/metatiles.bin");
+const u16 gMetatileAttributes_TillbrookSnow[] = INCBIN_U16("data/tilesets/primary/tillbrook_snow/metatile_attributes.bin");
 const u16 gMetatileAttributes_Snow[] = INCBIN_U16("data/tilesets/primary/snow/metatile_attributes.bin");
 
 const u16 gMetatiles_SnowpointCity[] = INCBIN_U16("data/tilesets/secondary/snowpoint_city/metatiles.bin");
 const u16 gMetatileAttributes_SnowpointCity[] = INCBIN_U16("data/tilesets/secondary/snowpoint_city/metatile_attributes.bin");
+
+const u16 gMetatiles_TillbrookGatehouse[] = INCBIN_U16("data/tilesets/primary/tillbrook_gatehouse/metatiles.bin");
+const u16 gMetatileAttributes_TillbrookGatehouse[] = INCBIN_U16("data/tilesets/primary/tillbrook_gatehouse/metatile_attributes.bin");
+
+const u16 gMetatiles_Tillbrook[] = INCBIN_U16("data/tilesets/secondary/tillbrook/metatiles.bin");
+const u16 gMetatileAttributes_Tillbrook[] = INCBIN_U16("data/tilesets/secondary/tillbrook/metatile_attributes.bin");
 
 const u16 gMetatiles_PlayersRoomBase[] = INCBIN_U16("data/tilesets/primary/players_room_base/metatiles.bin");
 const u16 gMetatileAttributes_PlayersRoomBase[] = INCBIN_U16("data/tilesets/primary/players_room_base/metatile_attributes.bin");

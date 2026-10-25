@@ -24,6 +24,7 @@
 #include "sprite.h"
 #include "strings.h"
 #include "task.h"
+#include "tillbrook_gym.h"
 #include "tv.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
@@ -101,6 +102,7 @@ static u8 CheckMovementInputNotOnBike(enum Direction);
 static void PlayerNotOnBikeNotMoving(enum Direction, u16);
 static void PlayerNotOnBikeTurningInPlace(enum Direction, u16);
 static void PlayerNotOnBikeMoving(enum Direction, u16);
+static bool32 IsPlayerWadingInDeepSnow(enum Direction);
 static enum Collision CheckForPlayerAvatarCollision(enum Direction);
 static enum Collision CheckForPlayerAvatarStaticCollision(enum Direction);
 static enum Collision CheckForObjectEventStaticCollision(struct ObjectEvent *, s16, s16, enum Direction, u8);
@@ -124,7 +126,7 @@ static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
 static void PlayerWalkSlowStairs(enum Direction direction);
-static void UNUSED PlayerWalkSlow(enum Direction direction);
+static void PlayerWalkSlow(enum Direction direction);
 static void PlayerRunSlow(enum Direction direction);
 static void PlayerRun(enum Direction);
 static void PlayerNotOnBikeCollide(enum Direction);
@@ -907,6 +909,12 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         return;
     }
 
+    if (IsPlayerWadingInDeepSnow(direction))
+    {
+        PlayerWalkSlow(direction);
+        return;
+    }
+
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
      && (heldKeys & B_BUTTON)
      && FlagGet(FLAG_SYS_B_DASH)
@@ -934,6 +942,19 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         else
             PlayerWalkNormal(direction);
     }
+}
+
+// Stepping into, through or out of deep snow is a slow wade, whether or not B is held.
+static bool32 IsPlayerWadingInDeepSnow(enum Direction direction)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    s16 x = playerObjEvent->currentCoords.x;
+    s16 y = playerObjEvent->currentCoords.y;
+
+    if (MetatileBehavior_IsDeepSnow(playerObjEvent->currentMetatileBehavior))
+        return TRUE;
+    MoveCoords(direction, &x, &y);
+    return MetatileBehavior_IsDeepSnow(MapGridGetMetatileBehaviorAt(x, y));
 }
 
 static enum Collision CheckForPlayerAvatarCollision(enum Direction direction)
@@ -1026,11 +1047,15 @@ static bool8 ShouldJumpLedge(s16 x, s16 y, enum Direction direction)
 
 static bool8 TryPushBoulder(s16 x, s16 y, enum Direction direction)
 {
-    if (FlagGet(FLAG_SYS_USE_STRENGTH))
-    {
-        u8 objectEventId = GetObjectEventIdByXY(x, y);
+    u8 objectEventId = GetObjectEventIdByXY(x, y);
 
-        if (objectEventId != OBJECT_EVENTS_COUNT && (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER || gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG))
+    if (objectEventId != OBJECT_EVENTS_COUNT)
+    {
+        bool8 isGymMiltank = IsTillbrookGymMiltank(&gObjectEvents[objectEventId]);
+
+        if (isGymMiltank || (FlagGet(FLAG_SYS_USE_STRENGTH)
+         && (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER
+          || gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG)))
         {
             x = gObjectEvents[objectEventId].currentCoords.x;
             y = gObjectEvents[objectEventId].currentCoords.y;
@@ -1260,7 +1285,7 @@ static void PlayerWalkSlowStairs(enum Direction direction)
 }
 
 // slow
-static void UNUSED PlayerWalkSlow(enum Direction direction)
+static void PlayerWalkSlow(enum Direction direction)
 {
     PlayerSetAnimId(GetWalkSlowMovementAction(direction), COPY_MOVE_WALK);
 }
@@ -1854,6 +1879,7 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
     {
         ObjectEventClearHeldMovementIfFinished(player);
         ObjectEventClearHeldMovementIfFinished(boulder);
+        TillbrookGym_OnPushComplete(boulder);
         HandleBoulderFallThroughHole(boulder);
         HandleBoulderActivateVictoryRoadSwitch(boulder->currentCoords.x, boulder->currentCoords.y);
         gPlayerAvatar.preventStep = FALSE;

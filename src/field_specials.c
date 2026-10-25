@@ -1539,6 +1539,45 @@ void LoadWallyZigzagoon(void)
     SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE4, &monData);
 }
 
+// Barry's starter in the Route 217 catching tutorial, by VAR_STARTER_MON.
+static const u16 sBarryTutorialMons[][4] =
+{
+    { SPECIES_CRANIDOS, MOVE_HEADBUTT,    MOVE_LEER,       MON_DATA_ATK_IV },   // player took Snorunt
+    { SPECIES_TANGELA,  MOVE_ABSORB,      MOVE_STUN_SPORE, MON_DATA_SPDEF_IV }, // player took Cranidos
+    { SPECIES_SNORUNT,  MOVE_POWDER_SNOW, MOVE_HEADBUTT,   MON_DATA_SPEED_IV }, // player took Tangela
+};
+
+void LoadBarryTutorialMon(void)
+{
+    u32 starter = VarGet(VAR_STARTER_MON);
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][0];
+    enum Species species;
+    u32 personality;
+    u32 perfectIv = MAX_PER_STAT_IVS;
+
+    if (starter >= ARRAY_COUNT(sBarryTutorialMons))
+        starter = 0;
+    species = sBarryTutorialMons[starter][0];
+    personality = GetMonPersonality(species, MON_GENDER_RANDOM, NATURE_HARDY, RANDOM_UNOWN_LETTER);
+
+    ZeroPlayerPartyMons();
+    CreateMonWithIVs(mon, species, 5, personality, OTID_STRUCT_PLAYER_ID, 0);
+    SetMonData(mon, sBarryTutorialMons[starter][3], &perfectIv);
+    CalculateMonStats(mon);
+    SetMonMoveSlot(mon, sBarryTutorialMons[starter][1], 0);
+    SetMonMoveSlot(mon, sBarryTutorialMons[starter][2], 1);
+    SetMonMoveSlot(mon, MOVE_NONE, 2);
+    SetMonMoveSlot(mon, MOVE_NONE, 3);
+    CalculatePlayerPartyCount();
+}
+
+// Undoes SavePlayerParty + LoadBarryTutorialMon, and swaps the follower back to the player's own Pokémon.
+void RestorePlayerPartyAfterTutorial(void)
+{
+    LoadPlayerParty();
+    UpdateFollowingPokemon();
+}
+
 bool8 IsStarterInParty(void)
 {
     u8 i;

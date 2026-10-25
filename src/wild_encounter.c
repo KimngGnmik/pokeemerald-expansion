@@ -584,9 +584,16 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
 
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
 {
-    u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
-    enum Species wildMonSpecies = wildMonInfo->wildPokemon[wildMonIndex].species;
-    u8 level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
+    u8 wildMonIndex;
+    enum Species wildMonSpecies;
+    u8 level;
+
+    if (!IsFishingRodAvailable(wildMonInfo, rod))
+        return SPECIES_NONE;
+
+    wildMonIndex = ChooseWildMonIndex_Fishing(rod);
+    wildMonSpecies = wildMonInfo->wildPokemon[wildMonIndex].species;
+    level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, WILD_AREA_FISHING);
 
     UpdateChainFishingStreak();
     CreateWildMon(wildMonSpecies, level);
@@ -932,23 +939,63 @@ bool8 SweetScentWildEncounter(void)
     return FALSE;
 }
 
-bool8 DoesCurrentMapHaveFishingMons(void)
+bool8 IsFishingRodAvailable(const struct WildPokemonInfo *wildMonInfo, u8 rod)
 {
-    u32 headerId = GetCurrentMapWildMonHeaderId();
-    enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
+    u32 firstSlot, slotCount, i;
 
-    if (headerId != HEADER_NONE && gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo != NULL)
-        return TRUE;
-    else
+    if (wildMonInfo == NULL || wildMonInfo->wildPokemon == NULL)
         return FALSE;
+
+    switch (rod)
+    {
+    case OLD_ROD:
+        firstSlot = 0;
+        slotCount = NUM_FISHING_MONS_OLD_ROD_ENCOUNTER_SLOTS;
+        break;
+    case GOOD_ROD:
+        firstSlot = NUM_FISHING_MONS_OLD_ROD_ENCOUNTER_SLOTS;
+        slotCount = NUM_FISHING_MONS_GOOD_ROD_ENCOUNTER_SLOTS;
+        break;
+    case SUPER_ROD:
+        firstSlot = NUM_FISHING_MONS_OLD_ROD_ENCOUNTER_SLOTS + NUM_FISHING_MONS_GOOD_ROD_ENCOUNTER_SLOTS;
+        slotCount = NUM_FISHING_MONS_SUPER_ROD_ENCOUNTER_SLOTS;
+        break;
+    default:
+        return FALSE;
+    }
+
+    // Every selectable slot must be populated, including slots swapped by a lure.
+    for (i = firstSlot; i < firstSlot + slotCount; i++)
+    {
+        if (wildMonInfo->wildPokemon[i].species == SPECIES_NONE)
+            return FALSE;
+    }
+
+    return TRUE;
 }
 
-void FishingWildEncounter(u8 rod)
+bool8 DoesCurrentMapHaveFishingMons(u8 rod)
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay;
+
+    if (headerId == HEADER_NONE)
+        return FALSE;
+
+    timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
+
+    return IsFishingRodAvailable(gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo, rod);
+}
+
+bool8 FishingWildEncounter(u8 rod)
 {
     enum Species species;
     u32 headerId;
     s16 x, y;
     enum TimeOfDay timeOfDay;
+
+    if (!DoesCurrentMapHaveFishingMons(rod))
+        return FALSE;
 
     gIsFishingEncounter = TRUE;
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
@@ -964,11 +1011,17 @@ void FishingWildEncounter(u8 rod)
         headerId = GetCurrentMapWildMonHeaderId();
         timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
         species = GenerateFishingWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo, rod);
+        if (species == SPECIES_NONE)
+        {
+            gIsFishingEncounter = FALSE;
+            return FALSE;
+        }
     }
 
     IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
     SetPokemonAnglerSpecies(species);
     BattleSetup_StartWildBattle();
+    return TRUE;
 }
 
 u16 GetLocalWildMon(bool8 *isWaterMon)

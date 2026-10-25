@@ -14225,11 +14225,11 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_WAILMER_PAIL] =
     {
-        .name = ITEM_NAME("Wailmer Pail"),
+        .name = ITEM_NAME("Sprayduck"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A tool used for\n"
-            "watering Berries\n"
+            "A duck-shaped tool\n"
+            "for watering Berries\n"
             "and plants."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,

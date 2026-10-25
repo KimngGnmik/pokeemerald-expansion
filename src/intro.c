@@ -118,8 +118,16 @@ enum {
     COPYRIGHT_INITIALIZE,
     COPYRIGHT_EMULATOR_BLEND,
     COPYRIGHT_START_FADE = 140,
+    COPYRIGHT_START_ART_CREDITS,
+    COPYRIGHT_ART_CREDITS_WAIT,
+    COPYRIGHT_ART_CREDITS_FADE,
     COPYRIGHT_START_INTRO,
 };
+
+static const u32 sArtCreditsTiles[] = INCGFX_U32("graphics/intro/art_credits.png", ".4bpp.smol");
+static const u32 sArtCreditsTilemap[] = INCGFX_U32("graphics/intro/art_credits.bin", ".smolTM");
+static const u16 sArtCreditsPalette[] = INCGFX_U16("graphics/intro/art_credits.png", ".gbapal");
+static u16 sArtCreditsTimer;
 
 #define TAG_VOLBEAT   1500
 #define TAG_TORCHIC   1501
@@ -1101,6 +1109,37 @@ static u8 SetUpCopyrightScreen(void)
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
             gMain.state++;
         }
+        break;
+    case COPYRIGHT_START_ART_CREDITS:
+        GameCubeMultiBoot_Main(&gMultibootProgramStruct);
+        if (UpdatePaletteFade())
+            break;
+        if (gMultibootProgramStruct.gcmb_field_2 != 0)
+        {
+            gMain.state = COPYRIGHT_START_INTRO;
+            break;
+        }
+        DecompressDataWithHeaderVram(sArtCreditsTiles, (void *)VRAM);
+        DecompressDataWithHeaderVram(sArtCreditsTilemap, (void *)(VRAM + 0x3800));
+        LoadPalette(sArtCreditsPalette, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        sArtCreditsTimer = 0;
+        gMain.state++;
+        break;
+    case COPYRIGHT_ART_CREDITS_WAIT:
+        UpdatePaletteFade();
+        GameCubeMultiBoot_Main(&gMultibootProgramStruct);
+        if (!gPaletteFade.active && (++sArtCreditsTimer >= 360
+            || (sArtCreditsTimer >= 60 && JOY_NEW(A_BUTTON | B_BUTTON | START_BUTTON))))
+        {
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            gMain.state++;
+        }
+        break;
+    case COPYRIGHT_ART_CREDITS_FADE:
+        GameCubeMultiBoot_Main(&gMultibootProgramStruct);
+        if (!UpdatePaletteFade())
+            gMain.state++;
         break;
     case COPYRIGHT_START_INTRO:
         if (UpdatePaletteFade())

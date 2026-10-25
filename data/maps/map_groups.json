@@ -74,7 +74,8 @@
     "gMapGroup_IndoorFiveIslandRoute_Frlg",
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
-    "gMapGroup_IndoorSevenIslandRoute_Frlg"
+    "gMapGroup_IndoorSevenIslandRoute_Frlg",
+    "gMapGroup_IndoorTillbrook"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -134,7 +135,17 @@
     "Underwater_Route105",
     "Underwater_Route125",
     "SnowpointCity",
-    "Route217"
+    "Route217",
+    "TillbrookTown"
+  ],
+  "gMapGroup_IndoorSnowpoint": [
+    "SnowpointCity_PlayersHouse_1F",
+    "SnowpointCity_PlayersHouse_2F",
+    "SnowpointCity_BarrysHouse_1F",
+    "SnowpointCity_BarrysHouse_2F",
+    "SnowpointCity_NeighborsHouse",
+    "SnowpointCity_Mart",
+    "Route217_RestCabin"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -464,7 +475,8 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "Route217_Hollow"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -1154,12 +1166,16 @@
   "gMapGroup_IndoorSevenIslandRoute_Frlg": [
     "SevenIsland_SevaultCanyon_House_Frlg"
   ],
-  "gMapGroup_IndoorSnowpoint": [
-    "SnowpointCity_PlayersHouse_1F",
-    "SnowpointCity_PlayersHouse_2F",
-    "SnowpointCity_BarrysHouse_1F",
-    "SnowpointCity_BarrysHouse_2F",
-    "SnowpointCity_NeighborsHouse",
-    "SnowpointCity_Mart"
+  "gMapGroup_IndoorTillbrook": [
+    "TillbrookTown_PokemonCenter_1F",
+    "TillbrookTown_Mart",
+    "TillbrookTown_House1",
+    "TillbrookTown_House2",
+    "TillbrookTown_House3",
+    "TillbrookTown_House4",
+    "TillbrookTown_House5",
+    "TillbrookTown_FlowerHouse",
+    "TillbrookTown_Gym",
+    "TillbrookTown_Gatehouse"
   ]
 }

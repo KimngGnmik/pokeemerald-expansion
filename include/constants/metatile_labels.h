@@ -1,6 +1,9 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_SnowpointCity
+#define METATILE_SnowpointCity_GateVoid 0x3A6
+
 // gTileset_BattleArena
 #define METATILE_BattleArena_Door  0x21B
 

@@ -4,6 +4,7 @@
 #include "constants/trainers.h"
 #include "constants/opponents.h"
 #include "constants/rematches.h"
+#include "constants/tillbrook.h"
 
 
 // Temporary Flags
@@ -59,32 +60,30 @@
 #define FLAG_HIDE_SNOWPOINT_CITY_BALL_SNORUNT    0x25 // Ceremony Poke Balls: hidden until the Elder lays them out, then once taken
 #define FLAG_HIDE_SNOWPOINT_CITY_BALL_CRANIDOS    0x26
 #define FLAG_HIDE_SNOWPOINT_CITY_BALL_TANGELA    0x27
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
+#define FLAG_MOM_AFTER_CEREMONY    0x28 // Mom has had her "how did it go?" talk after the ceremony
+#define FLAG_TILLBROOK_BERRIES_INITIALIZED 0x29
+#define FLAG_TILLBROOK_HIDE_BARRY       0x2A
+#define FLAG_TILLBROOK_HIDE_PAUL        0x2B
+#define FLAG_TILLBROOK_HIDE_STARTER     0x2C
+#define FLAG_TILLBROOK_HIDE_STARLY      0x2D
+#define FLAG_TILLBROOK_PAUL_COMPLETE    0x2E
+#define FLAG_TILLBROOK_RECEIVED_PAIL    0x2F
+#define FLAG_TILLBROOK_RECEIVED_ORAN    0x30
+#define FLAG_TILLBROOK_RECEIVED_PECHA   0x31
+#define FLAG_TILLBROOK_RECEIVED_CUT     0x32
+#define FLAG_TILLBROOK_STALL_1          0x33
+#define FLAG_TILLBROOK_STALL_2          0x34
+#define FLAG_TILLBROOK_STALL_3          0x35
+#define FLAG_TILLBROOK_RETURN_RECEIVED  0x36
+#define FLAG_ITEM_TILLBROOK_ANTIDOTE    0x37
+#define FLAG_UNUSED_0x038              0x38
+#define FLAG_ITEM_TILLBROOK_POKE_BALL   0x39
+#define FLAG_PAUL_STARTER_ROUTE216      0x3A
+#define FLAG_BARRY_CAUGHT_STARLY        0x3B
+#define FLAG_TILLBROOK_BARRY_GYM_TALK    0x3C
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
@@ -664,11 +663,11 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
+#define FLAG_ITEM_TILLBROOK_HAY_POTION 0x264
+#define FLAG_HIDDEN_ITEM_ROUTE217_HOLLOW_ESCAPE_ROPE 0x265
+#define FLAG_ITEM_ROUTE217_POTION 0x266
+#define FLAG_ITEM_ROUTE217_ORAN_BERRY 0x267
+#define FLAG_ITEM_ROUTE217_HOLLOW_POKE_BALLS 0x268
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
@@ -767,8 +766,8 @@
 #define FLAG_HIDE_MEW                                               0x2CE
 #define FLAG_HIDE_ROUTE_104_RIVAL                                   0x2CF
 #define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0x2D0
-#define FLAG_UNUSED_0x2D1                                           0x2D1 // Unused Flag
-#define FLAG_UNUSED_0x2D2                                           0x2D2 // Unused Flag
+#define FLAG_ITEM_ROUTE217_HOLLOW_HARD_STONE                                           0x2D1 // Unused Flag
+#define FLAG_ITEM_ROUTE217_HOLLOW_NUGGET                                           0x2D2 // Unused Flag
 #define FLAG_HIDE_ROUTE_103_RIVAL                                   0x2D3
 #define FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE                    0x2D4
 #define FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT                        0x2D5
@@ -783,8 +782,8 @@
 #define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0x2DC
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP              0x2DD
 #define FLAG_HIDE_PLAYERS_HOUSE_DAD                                 0x2DE
-#define FLAG_UNUSED_0x2DF                                           0x2DF // Unused Flag
-#define FLAG_UNUSED_0x2E0                                           0x2E0 // Unused Flag
+#define FLAG_ITEM_ROUTE217_HOLLOW_RARE_CANDY                                           0x2DF // Unused Flag
+#define FLAG_ITEM_ROUTE217_HOLLOW_REVIVE                                           0x2E0 // Unused Flag
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE             0x2E1
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY                               0x2E2
 #define FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY                           0x2E3
@@ -793,7 +792,7 @@
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT                          0x2E6
 #define FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN                       0x2E7
 #define FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT                          0x2E8
-#define FLAG_UNUSED_0x2E9                                           0x2E9 // Unused Flag
+#define FLAG_HIDE_ROUTE217_BARRY                                           0x2E9 // Barry has run ahead from the Route 217 gate
 #define FLAG_UNUSED_0x2EA                                           0x2EA // Unused Flag
 #define FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION                  0x2EB
 #define FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER                0x2EC
@@ -1391,7 +1390,7 @@
 #define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
+#define FLAG_SYS_TRAINER_CARD_GET                   (SYSTEM_FLAGS + 0x25) // Mom gives it after the ceremony; shows the Trainer Card in the start menu
 #define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
 #define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
 

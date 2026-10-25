@@ -94,7 +94,7 @@ AI: Basic Trainer
 
 Snorunt
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
 
 === TRAINER_BARRY_SNOWPOINT_CRANIDOS ===
 Name: Barry
@@ -107,7 +107,7 @@ AI: Basic Trainer
 
 Cranidos
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BARRY_SNOWPOINT_TANGELA ===
 Name: Barry
@@ -120,4 +120,408 @@ AI: Basic Trainer
 
 Tangela
 Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 31 SpD / 0 Spe
+
+=== TRAINER_HALE ===
+Name: Hale
+Class: Leader
+Pic: Breeder M DP
+Gender: Male
+Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Bidoof
+Level: 10
+Ability: Unaware
+Impish Nature
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Tackle
+- Growl
+- Defense Curl
+- Headbutt
+
+Buneary
+Level: 10
+Ability: Run Away
+Jolly Nature
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Pound
+- Quick Attack
+- Baby-Doll Eyes
+- Defense Curl
+
+Lillipup
+Level: 11
+Ability: Vital Spirit
+Adamant Nature
+Happiness: 150
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Tackle
+- Leer
+- Return
+- Bite
+
+Aipom
+Level: 11
+Ability: Pickup
+Jolly Nature
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Scratch
+- Sand Attack
+- Astonish
+- Tail Whip
+
+Teddiursa
+Level: 12
+Ability: Pickup
+Adamant Nature
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Scratch
+- Lick
+- Fury Swipes
+- Leer
+
+Miltank @ Oran Berry
+Level: 14
+Ability: Thick Fat
+Careful Nature
+Shiny: Yes
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Stomp
+- Tackle
+- Defense Curl
+- Growl
+
+=== TRAINER_RANCHER_WADE ===
+Name: Wade
+Class: Rancher
+Pic: Breeder M DP
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Lechonk
+Level: 9
+Ability: Gluttony
+Hardy Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Tail Whip
+- Disarming Voice
+
+Zigzagoon
+Level: 10
+Ability: Pickup
+Hardy Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Sand Attack
+- Headbutt
+
+=== TRAINER_COWGIRL_LILY ===
+Name: Lily
+Class: Cowgirl
+Pic: Breeder F DP
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+Happiny
+Level: 10
+Ability: Natural Cure
+Hardy Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pound
+- Charm
+- Defense Curl
+
+Glameow
+Level: 11
+Ability: Limber
+Hardy Nature
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Fake Out
+- Growl
+- Hypnosis
+
+=== TRAINER_BARRY_TILLBROOK_SNORUNT ===
+Name: Barry
+Class: Rival
+Pic: Barry DP
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Bidoof
+Level: 7
+Ability: Unaware
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Tackle
+- Growl
+- Defense Curl
+
+Cranidos @ Oran Berry
+Level: 9
+Ability: Mold Breaker
+Adamant Nature
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Headbutt
+- Leer
+- Focus Energy
+- Pursuit
+
+=== TRAINER_BARRY_TILLBROOK_CRANIDOS ===
+Name: Barry
+Class: Rival
+Pic: Barry DP
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Bidoof
+Level: 7
+Ability: Unaware
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Tackle
+- Growl
+- Defense Curl
+
+Tangela @ Oran Berry
+Level: 9
+Ability: Chlorophyll
+Modest Nature
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Absorb
+- Bind
+- Growth
+- Poison Powder
+
+=== TRAINER_BARRY_TILLBROOK_TANGELA ===
+Name: Barry
+Class: Rival
+Pic: Barry DP
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Bidoof
+Level: 7
+Ability: Unaware
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Tackle
+- Growl
+- Defense Curl
+
+Snorunt @ Oran Berry
+Level: 9
+Ability: Inner Focus
+Jolly Nature
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Powder Snow
+- Astonish
+- Leer
+- Ice Shard
+
+=== TRAINER_PAUL_TILLBROOK_SNORUNT ===
+Name: Paul
+Class: Rival
+Pic: Paul
+Gender: Male
+Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Starly @ Sharp Beak
+Level: 12
+Ability: Reckless
+Jolly Nature
+EVs: 4 HP / 252 Atk / 252 Spe
+- Quick Attack
+- Wing Attack
+- Double Team
+- Growl
+
+Elekid @ Magnet
+Level: 12
+Ability: Static
+Hasty Nature
+EVs: 4 Atk / 252 SpA / 252 Spe
+- Quick Attack
+- Thunder Shock
+- Low Kick
+- Leer
+
+Tangela @ Big Root
+Level: 14
+Ability: Regenerator
+Modest Nature
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 SpA
+- Mega Drain
+- Vine Whip
+- Sleep Powder
+- Bind
+
+=== TRAINER_PAUL_TILLBROOK_CRANIDOS ===
+Name: Paul
+Class: Rival
+Pic: Paul
+Gender: Male
+Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Starly @ Sharp Beak
+Level: 12
+Ability: Reckless
+Jolly Nature
+EVs: 4 HP / 252 Atk / 252 Spe
+- Quick Attack
+- Wing Attack
+- Double Team
+- Growl
+
+Elekid @ Magnet
+Level: 12
+Ability: Static
+Hasty Nature
+EVs: 4 Atk / 252 SpA / 252 Spe
+- Quick Attack
+- Thunder Shock
+- Low Kick
+- Leer
+
+Snorunt @ Never-Melt Ice
+Level: 14
+Ability: Inner Focus
+Jolly Nature
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+- Ice Shard
+- Bite
+- Powder Snow
+- Leer
+
+=== TRAINER_PAUL_TILLBROOK_TANGELA ===
+Name: Paul
+Class: Rival
+Pic: Paul
+Gender: Male
+Music: Male
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Starly @ Sharp Beak
+Level: 12
+Ability: Reckless
+Jolly Nature
+EVs: 4 HP / 252 Atk / 252 Spe
+- Quick Attack
+- Wing Attack
+- Double Team
+- Growl
+
+Elekid @ Magnet
+Level: 12
+Ability: Static
+Hasty Nature
+EVs: 4 Atk / 252 SpA / 252 Spe
+- Quick Attack
+- Thunder Shock
+- Low Kick
+- Leer
+
+Cranidos @ Hard Stone
+Level: 14
+Ability: Sheer Force
+Adamant Nature
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+- Headbutt
+- Rock Throw
+- Zen Headbutt
+- Scary Face
+
+=== TRAINER_TAD ===
+Name: Tad
+Class: Youngster
+Pic: Youngster DP
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Starly
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Shinx
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_WES ===
+Name: Wes
+Class: Bug Catcher
+Pic: Bug Catcher DP
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Kricketot
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Combee
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_DANA ===
+Name: Dana
+Class: Skier
+Pic: Skier F DP
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+
+Cubchoo
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Snover
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BRAM ===
+Name: Bram
+Class: Hiker
+Pic: Hiker DP
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer
+
+Roggenrola
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Machop
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CORA ===
+Name: Cora
+Class: Lass
+Pic: Lass DP
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+
+Pachirisu
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Skitty
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

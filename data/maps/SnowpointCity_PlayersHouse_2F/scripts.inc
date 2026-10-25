@@ -91,7 +91,7 @@ SnowpointCity_PlayersHouse_2F_EventScript_Kotatsu::
 SnowpointCity_PlayersHouse_2F_Text_LeagueNews:
 	.string "In League news, Sinnoh has a new\n"
 	.string "Champion.\p"
-	.string "We'll have more on the TRAINER who won\n"
+	.string "We'll have more on the Trainer who won\n"
 	.string "the title after the weather.$"
 
 SnowpointCity_PlayersHouse_2F_Text_Weather:
@@ -122,7 +122,7 @@ SnowpointCity_PlayersHouse_2F_Text_Map:
 
 SnowpointCity_PlayersHouse_2F_Text_Bookshelf:
 	.string "It's crammed with books about\n"
-	.string "POKéMON and old Snowpoint legends.$"
+	.string "Pokémon and old Snowpoint legends.$"
 
 SnowpointCity_PlayersHouse_2F_Text_Bed:
 	.string "{PLAYER}'s bed.\n"

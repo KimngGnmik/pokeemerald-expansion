@@ -446,7 +446,8 @@ void PlayerPartnerBufferExecCompleted(enum BattlerId battler);
 void SetControllerToSafari(enum BattlerId battler);
 void SafariBufferExecCompleted(enum BattlerId battler);
 
-// wally controller
+// wally controller, which runs Barry's Bidoof catch on Route 217
+#define CATCH_TUTORIAL_TRAINER_PIC (IS_FRLG ? TRAINER_PIC_OLD_MAN : TRAINER_PIC_BARRY_DP)
 void SetControllerToWally(enum BattlerId battler);
 void WallyBufferExecCompleted(enum BattlerId battler);
 

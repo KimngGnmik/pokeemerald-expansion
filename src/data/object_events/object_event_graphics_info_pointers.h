@@ -108,6 +108,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanFPt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWomanPt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CynthiaPt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcherPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SkierFPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HikerPt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Paul;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway;
@@ -530,6 +534,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OLD_WOMAN_PT] =          &gObjectEventGraphicsInfo_OldWomanPt,
     [OBJ_EVENT_GFX_CYNTHIA_PT] =            &gObjectEventGraphicsInfo_CynthiaPt,
     [OBJ_EVENT_GFX_EXPERT_PT] =             &gObjectEventGraphicsInfo_ExpertPt,
+    [OBJ_EVENT_GFX_BUG_CATCHER_PT] =        &gObjectEventGraphicsInfo_BugCatcherPt,
+    [OBJ_EVENT_GFX_SKIER_F_PT] =            &gObjectEventGraphicsInfo_SkierFPt,
+    [OBJ_EVENT_GFX_HIKER_PT] =              &gObjectEventGraphicsInfo_HikerPt,
+    [OBJ_EVENT_GFX_PAUL] =                  &gObjectEventGraphicsInfo_Paul,
     [OBJ_EVENT_GFX_TRUCK] =                    &gObjectEventGraphicsInfo_Truck,
     [OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX] =    &gObjectEventGraphicsInfo_VigorothCarryingBox,
     [OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY] =     &gObjectEventGraphicsInfo_VigorothFacingAway,

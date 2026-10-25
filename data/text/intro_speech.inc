@@ -5,11 +5,6 @@ gText_IntroSpeech_Welcome::
 	.string "its myths and ruins.\p"
 	.string "$"
 
-gText_IntroSpeech_Pokemon::
-	.string "This is what we call a “POKéMON.”\p"
-	.string "\n"
-	.string "$"
-
 gText_IntroSpeech_MainSpeech::
 	.string "There are Pokémon all over this\n"
 	.string "world. In the mountains, in the\l"

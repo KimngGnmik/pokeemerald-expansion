@@ -1575,6 +1575,17 @@ const struct Tileset gTileset_SnowpointCity =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_Tillbrook =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Tillbrook,
+    .palettes = gTilesetPalettes_Tillbrook,
+    .metatiles = gMetatiles_Tillbrook,
+    .metatileAttributes = gMetatileAttributes_Tillbrook,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_PlayersRoomBase =
 {
     .isCompressed = TRUE,
@@ -1617,4 +1628,49 @@ const struct Tileset gTileset_PlayersLiving =
     .metatiles = gMetatiles_PlayersLiving,
     .metatileAttributes = gMetatileAttributes_PlayersLiving,
     .callback = NULL,
+};
+
+// Emerald's cave tiles in Iron Island grey, for the Route 217 Hollow (same tiles and metatiles, own palettes)
+const struct Tileset gTileset_GeneralGrey =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_GeneralGrey,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_TillbrookGatehouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_TillbrookGatehouse,
+    .palettes = gTilesetPalettes_TillbrookGatehouse,
+    .metatiles = gMetatiles_TillbrookGatehouse,
+    .metatileAttributes = gMetatileAttributes_TillbrookGatehouse,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_TillbrookSnow =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_TillbrookSnow,
+    .palettes = gTilesetPalettes_TillbrookSnow,
+    .metatiles = gMetatiles_TillbrookSnow,
+    .metatileAttributes = gMetatileAttributes_TillbrookSnow,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_CaveGrey =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cave,
+    .palettes = gTilesetPalettes_CaveGrey,
+    .metatiles = gMetatiles_Cave,
+    .metatileAttributes = gMetatileAttributes_Cave,
+    .callback = InitTilesetAnim_Cave,
 };

@@ -509,6 +509,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Dawn,                 OBJ_EVENT_PAL_TAG_DAWN},
     {gObjectEventPal_Johanna,               OBJ_EVENT_PAL_TAG_JOHANNA},
     {gObjectEventPal_Barry,                 OBJ_EVENT_PAL_TAG_BARRY},
+    {gObjectEventPal_Paul,                  OBJ_EVENT_PAL_TAG_PAUL},
     {gObjectEventPal_SchoolKidMPt,          OBJ_EVENT_PAL_TAG_SCHOOL_KID_M_PT},
     {gObjectEventPal_YoungsterPt,           OBJ_EVENT_PAL_TAG_YOUNGSTER_PT},
     {gObjectEventPal_WomanSnowPt,           OBJ_EVENT_PAL_TAG_WOMAN_SNOW_PT},
@@ -520,6 +521,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_OldWomanPt,            OBJ_EVENT_PAL_TAG_OLD_WOMAN_PT},
     {gObjectEventPal_CynthiaPt,             OBJ_EVENT_PAL_TAG_CYNTHIA_PT},
     {gObjectEventPal_ExpertPt,              OBJ_EVENT_PAL_TAG_EXPERT_PT},
+    {gObjectEventPal_BugCatcherPt,  OBJ_EVENT_PAL_TAG_BUG_CATCHER_PT},
+    {gObjectEventPal_SkierFPt,      OBJ_EVENT_PAL_TAG_SKIER_F_PT},
+    {gObjectEventPal_HikerPt,       OBJ_EVENT_PAL_TAG_HIKER_PT},
     {gObjectEventPal_BrendanReflection,     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION},
     {gObjectEventPal_BridgeReflection,      OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION},
     {gObjectEventPal_PlayerUnderwater,      OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER},
@@ -6386,9 +6390,16 @@ enum Collision GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, enum 
 
 static enum Collision GetVanillaCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, enum Direction direction)
 {
+    bool32 swimmingMagikarp = gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TILLBROOK_TOWN)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TILLBROOK_TOWN)
+        && objectEvent->graphicsId == OBJ_EVENT_GFX_SPECIES(MAGIKARP);
+
     if (IsCoordOutsideObjectEventMovementRange(objectEvent, x, y))
         return COLLISION_OUTSIDE_RANGE;
-    else if (MapGridGetCollisionAt(x, y) || GetMapBorderIdAt(x, y) == CONNECTION_INVALID || IsMetatileDirectionallyImpassable(objectEvent, x, y, direction))
+    else if ((swimmingMagikarp
+        ? !MetatileBehavior_IsSurfableFishableWater(MapGridGetMetatileBehaviorAt(x, y))
+        : MapGridGetCollisionAt(x, y))
+        || GetMapBorderIdAt(x, y) == CONNECTION_INVALID || IsMetatileDirectionallyImpassable(objectEvent, x, y, direction))
         return COLLISION_IMPASSABLE;
     else if (objectEvent->trackedByCamera && !CanCameraMoveInDirection(direction))
         return COLLISION_IMPASSABLE;
@@ -9701,7 +9712,8 @@ static void GetGroundEffectFlags_Tracks(struct ObjectEvent *objEvent, u32 *flags
     if (objEvent->directionOverwrite)
         return;
 
-    if (MetatileBehavior_IsDeepSand(objEvent->previousMetatileBehavior))
+    if (MetatileBehavior_IsDeepSand(objEvent->previousMetatileBehavior)
+     || MetatileBehavior_IsDeepSnow(objEvent->previousMetatileBehavior))
         *flags |= GROUND_EFFECT_FLAG_DEEP_SAND;
     else if (MetatileBehavior_IsSandOrDeepSand(objEvent->previousMetatileBehavior)
              || MetatileBehavior_IsFootprints(objEvent->previousMetatileBehavior))

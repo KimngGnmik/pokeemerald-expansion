@@ -18,6 +18,8 @@
 gSpecials::
 .endif
 	def_special HealPlayerParty
+	def_special Tillbrook_SaveFaintedParty
+	def_special Tillbrook_RevivePaulCasualties
 	def_special SetCableClubWarp
 	def_special DoCableClubWarp, waitstate=1
 	def_special ReturnFromLinkRoom, waitstate=1
@@ -176,6 +178,7 @@ gSpecials::
 	def_special Special_ViewWallClock, waitstate=1
 	def_special ChooseStarter, waitstate=1
 	def_special StartWallyTutorialBattle, waitstate=1
+	def_special StartBarryTutorialBattle, waitstate=1
 	def_special ChangePokemonNickname, waitstate=1
 	def_special ChoosePartyMon, waitstate=1
 	def_special GetFirstFreePokeblockSlot
@@ -320,6 +323,8 @@ gSpecials::
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp, waitstate=1
 	def_special LoadWallyZigzagoon
+	def_special LoadBarryTutorialMon
+	def_special RestorePlayerPartyAfterTutorial
 	def_special IsStarterInParty
 	def_special CopyCurSecretBaseOwnerName_StrVar1
 	def_special ScriptCheckFreePokemonStorageSpace
@@ -639,3 +644,6 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
+	def_special TillbrookGym_Load
+	def_special TillbrookGym_RestoreObjects
+	def_special TillbrookGym_ResetSection

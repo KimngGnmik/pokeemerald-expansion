@@ -12,7 +12,6 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "region": "REGION_HOENN",
   "connections": [
     {
       "map": "MAP_SNOWPOINT_CITY",
@@ -20,8 +19,168 @@
       "direction": "left"
     }
   ],
-  "object_events": [],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "object_events": [
+    {
+      "local_id": "LOCALID_ROUTE217_BARRY",
+      "graphics_id": "OBJ_EVENT_GFX_BARRY",
+      "x": 5,
+      "y": 1,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROUTE217_BARRY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_PT",
+      "x": 8,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route217_EventScript_Tad",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER_PT",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route217_EventScript_Wes",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SKIER_F_PT",
+      "x": 3,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route217_EventScript_Dana",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS_PT",
+      "x": 15,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "8",
+      "script": "Route217_EventScript_Cora",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route217_EventScript_ItemPotion",
+      "flag": "FLAG_ITEM_ROUTE217_POTION"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 6,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route217_EventScript_ItemOranBerry",
+      "flag": "FLAG_ITEM_ROUTE217_ORAN_BERRY"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 18,
+      "y": 30,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE217_HOLLOW",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE217_REST_CABIN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_TILLBROOK_TOWN_GATEHOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_TILLBROOK_TOWN_GATEHOUSE",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_ROUTE217_STATE",
+      "var_value": "0",
+      "script": "Route217_EventScript_BarryPastGate"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 2,
+      "elevation": 3,
+      "var": "VAR_ROUTE217_STATE",
+      "var_value": "0",
+      "script": "Route217_EventScript_BarryPastGate"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_ROUTE217_STATE",
+      "var_value": "0",
+      "script": "Route217_EventScript_BarryPastGate"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Route217_EventScript_TillbrookSign"
+    }
+  ],
+  "region": "REGION_HOENN"
 }

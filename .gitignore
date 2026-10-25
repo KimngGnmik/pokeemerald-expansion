@@ -66,3 +66,10 @@ tools/aif2pcm/aif2pcm
 *.smolTM
 __pycache__
 .map_version
+
+# Local tileset build tools
+art/tilesets/build_tilesets.sh
+art/build_tillbrook_tileset.lua
+
+# Local AI player saves, screenshots, and session logs
+.local-player/

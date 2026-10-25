@@ -68,7 +68,36 @@ SnowpointCity_PlayersHouse_1F_Movement_MomToKitchen:
 	step_end
 
 SnowpointCity_PlayersHouse_1F_EventScript_Mom::
-	msgbox SnowpointCity_PlayersHouse_1F_Text_MomReminder, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_ge VAR_SNOWPOINT_INTRO_STATE, 10, SnowpointCity_PlayersHouse_1F_EventScript_MomAfterCeremony
+	msgbox SnowpointCity_PlayersHouse_1F_Text_MomReminder, MSGBOX_DEFAULT
+	release
+	end
+
+@ After the ceremony Mom heals the party every time; the first time she asks how it went.
+SnowpointCity_PlayersHouse_1F_EventScript_MomAfterCeremony::
+	goto_if_set FLAG_MOM_AFTER_CEREMONY, SnowpointCity_PlayersHouse_1F_EventScript_MomRest
+	bufferpartymonnick STR_VAR_1, 0
+	msgbox SnowpointCity_PlayersHouse_1F_Text_HowDidItGo, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message SnowpointCity_PlayersHouse_1F_Text_ReceivedTrainerCard
+	waitfanfare
+	setflag FLAG_SYS_TRAINER_CARD_GET
+	msgbox SnowpointCity_PlayersHouse_1F_Text_TakeCareOfYouBoth, MSGBOX_DEFAULT
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox SnowpointCity_PlayersHouse_1F_Text_TownIsProud, MSGBOX_DEFAULT
+	setflag FLAG_MOM_AFTER_CEREMONY
+	release
+	end
+
+SnowpointCity_PlayersHouse_1F_EventScript_MomRest::
+	msgbox SnowpointCity_PlayersHouse_1F_Text_RestAMinute, MSGBOX_DEFAULT
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox SnowpointCity_PlayersHouse_1F_Text_TakeCareOfEachOther, MSGBOX_DEFAULT
+	release
 	end
 
 SnowpointCity_PlayersHouse_1F_EventScript_Sink::
@@ -140,7 +169,7 @@ SnowpointCity_PlayersHouse_1F_Text_Fridge:
 	.string "“For after the ceremony.”$"
 
 SnowpointCity_PlayersHouse_1F_Text_TV:
-	.string "It's a show about POKéMON that live\n"
+	.string "It's a show about Pokémon that live\n"
 	.string "in the snow.\p"
 	.string "A Snover is waddling through\n"
 	.string "a blizzard…$"
@@ -151,8 +180,35 @@ SnowpointCity_PlayersHouse_1F_Text_Wastebasket:
 
 SnowpointCity_PlayersHouse_1F_Text_Bookshelf:
 	.string "Cookbooks, a field guide to northern\n"
-	.string "POKéMON, and a photo album.$"
+	.string "Pokémon, and a photo album.$"
 
 SnowpointCity_PlayersHouse_1F_Text_Table:
 	.string "There's a plate of warm muffins.\n"
 	.string "Mom must have been up early.$"
+
+SnowpointCity_PlayersHouse_1F_Text_HowDidItGo:
+	.string "Mom: {PLAYER}! How did it go?\p"
+	.string "So {STR_VAR_1} is your partner?\n"
+	.string "{STR_VAR_1} is so adorable!\p"
+	.string "I am so proud of you, honey!\p"
+	.string "Take this. It's your very own\n"
+	.string "Trainer Card.$"
+
+SnowpointCity_PlayersHouse_1F_Text_ReceivedTrainerCard:
+	.string "{PLAYER} received a Trainer Card!$"
+
+SnowpointCity_PlayersHouse_1F_Text_TakeCareOfYouBoth:
+	.string "Mom: Come here, let me take care of\n"
+	.string "you both before you go.$"
+
+SnowpointCity_PlayersHouse_1F_Text_TownIsProud:
+	.string "Mom: There. Now go on with your\n"
+	.string "journey. I love you!$"
+
+SnowpointCity_PlayersHouse_1F_Text_RestAMinute:
+	.string "Mom: You look tired, {PLAYER}.\n"
+	.string "Rest a minute.$"
+
+SnowpointCity_PlayersHouse_1F_Text_TakeCareOfEachOther:
+	.string "Mom: Take care of each other\n"
+	.string "out there.$"

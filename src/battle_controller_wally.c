@@ -282,14 +282,14 @@ void WallyBufferExecCompleted(enum BattlerId battler)
 
 static void WallyHandleDrawTrainerPic(enum BattlerId battler)
 {
-    BtlController_HandleDrawTrainerPic(battler, TRAINER_PIC_WALLY, FALSE,
-                                       80, 80 + 4 * (8 - GetTrainerBackPicCoords(TRAINER_PIC_WALLY)->size),
+    BtlController_HandleDrawTrainerPic(battler, CATCH_TUTORIAL_TRAINER_PIC, FALSE,
+                                       80, 80 + 4 * (8 - GetTrainerBackPicCoords(CATCH_TUTORIAL_TRAINER_PIC)->size),
                                        30);
 }
 
 static void WallyHandleTrainerSlide(enum BattlerId battler)
 {
-    BtlController_HandleTrainerSlide(battler, TRAINER_PIC_WALLY);
+    BtlController_HandleTrainerSlide(battler, CATCH_TUTORIAL_TRAINER_PIC);
 }
 
 #undef sSpeedX
@@ -319,11 +319,20 @@ static void WallyHandleChooseAction(enum BattlerId battler)
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
 }
 
+// Barry's tutorial: first turn uses the first move, second turn the second.
+static u32 GetTutorialMoveSlot(enum BattlerId battler)
+{
+    if (gBattleStruct->wallyBattleState == 3 && GetMonData(GetBattlerMon(battler), MON_DATA_MOVE2) != MOVE_NONE)
+        return 1;
+    return 0;
+}
+
 static void WallyHandleChooseMove(enum BattlerId battler)
 {
     switch (gBattleStruct->wallyMovesState)
     {
     case 0:
+        gMoveSelectionCursor[battler] = GetTutorialMoveSlot(battler);
         InitMoveSelectionsVarsAndStrings(battler);
         gBattleStruct->wallyMovesState++;
         gBattleStruct->wallyMoveFrames = 80;
@@ -340,7 +349,7 @@ static void WallyHandleChooseMove(enum BattlerId battler)
         if (--gBattleStruct->wallyMoveFrames == 0)
         {
             PlaySE(SE_SELECT);
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, 0x100);
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | 0x100);
             BtlController_Complete(battler);
         }
         break;
@@ -366,7 +375,7 @@ static void WallyHandleFaintingCry(enum BattlerId battler)
 
 static void WallyHandleIntroTrainerBallThrow(enum BattlerId battler)
 {
-    const u16 *trainerPal = GetTrainerBackPicPalette(TRAINER_PIC_WALLY);
+    const u16 *trainerPal = GetTrainerBackPicPalette(CATCH_TUTORIAL_TRAINER_PIC);
     BtlController_HandleIntroTrainerBallThrow(battler, 0xD6F8, trainerPal, 31, Intro_TryShinyAnimShowHealthbox);
 }
 
